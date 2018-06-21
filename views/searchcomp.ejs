@@ -1,0 +1,62 @@
+<% include header %>
+<%= title %>
+
+
+
+
+
+<form method="post">
+<table>
+
+<tr><td>From Date:</td><td><input type="date" name="fdate"></td>
+<td>To Date:</td><td><input type="date" name="tdate"></td>
+<td>Status:<select name="state" ><option>NEW</option><option>PENDING</option>
+<option>UNDER PROGRESS</option><option>RESOLVED</option></select></td>
+<td><input type="submit" name="submit" value="search"></td>
+<td>Problem:<select nam="problem" ><option>ALL</option><option>normal</option>
+<option>critical</option></select></td>
+<td><input type="submit" name="submit" value="search"></td>
+</tr>
+
+</table>
+
+</form>
+<table border="1"><tr>
+<th></th>
+
+<th></th>
+<th>COMPLAIN_DATE</th>
+<th>COMPLAIN_ID</th>
+<th>CUST_NAME_LOC_CODE</th>
+<th>NATURE_OF_COMPLAIN</th>
+<th>COMPLAIN_DESC</th>
+<th>PERSON_WHO_MADE_THE_COMPLAIN</th>
+<th>SUPERVISOR_EMPLOYEE_CODE</th>
+<th>MECHANIC1_EMPLOYEE_CODE</th>
+<th>MECHANIC2_EMPLOYEE_CODE</th>
+<th>TECHNICIAN_REMARKS</th>
+<th>STATUS</th>
+<th>COMP_ATTD_DATE_TIME</th>
+<th>JOB_COMPL_DATE_TIME</th>
+</tr>
+<% for(var i=0;i<data.length;i++) { %>
+<tr>
+<td><form method="post"><input type="submit" name="submit" value="view"><input type="text" name="idcomplaint" value="<%= data[i].idcomplaint %>" hidden></form>
+</td>
+<td><form><input type="submit" value="update"><input type="text" value="<%= data[i].COMPLAIN_ID %>" hidden></form>
+</td><td><form><input type="submit" value="delete"><input type="text" value="<%= data[i].COMPLAIN_ID %>" hidden></form>
+</td>
+
+
+
+<td><%= data[i].idcomplaint %> </td>
+<td><%= data[i].problem %> </td>
+<td><%= data[i].status %> </td>
+<td><%= data[i].comp_desc %> </td>
+<td><%= data[i].remark %> </td>
+<td><%= data[i].doc %> </td>
+</form></tr>
+<% } %>												
+<span><%= status %></span>
+
+<% include footer %>

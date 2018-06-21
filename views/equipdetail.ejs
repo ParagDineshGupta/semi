@@ -1,0 +1,98 @@
+<% include header %>
+
+<div class="rdiv">
+<ul>
+<li>
+<a onclick="viewform()" id="esc">Equipment Complaint</a>
+</li>
+<li>
+<a onclick="csvform()" id="csv">upload csv</a>
+</li>
+<li>
+<a href="/amc?e=<%= data[0].ebid %>">Genertate AMC</a>
+</li>
+<li>
+<a href="">Delete Equipment</a>
+</li>
+<li>
+<a href="">Update Equipment</a>
+</li>
+<li>
+<a href="">Complaints History</a>
+</li>
+</ul>
+</div>
+Basic Equipment Details:<%= data[0].ebid %><br>
+<form  method="post" enctype="multipart/form-data"  id="csvform" style="display:none" >
+ <input type="file" name="myfile" accept=".csv" required >
+ <input type="hidden" name="bid" value="<%= data[0].ebid %>" >
+ <input type="hidden" name="total" value="<%= data[0].total %>" >
+ <input type="submit" name="submit" value="Upload">
+</form>
+<form  method="post" id="viewform" style="display:none">
+               <center id="esctable">
+  <table>
+<tr>
+<td>
+Complainant's Name:
+</td>
+<td>
+<input type="text" name="complainant" required>
+</td>
+</tr><tr>
+<td>
+Contact No.:
+</td>
+<td>
+<input type="text" name="contact_number" pattern="[7-9]{1}[0-9]{9}"  required>
+</td>
+</tr>
+<tr>
+<td>
+No. of Equipments affected:
+</td>
+<td>
+<input type="number" name="affected_equips" min="0" required>
+</td>
+</tr>
+<tr>
+<td>
+<textarea name="comp_desc" rows="4" cols="50" placeholder="Write about complaint"></textarea>
+</td>
+<td>
+<textarea rows="4" cols="50" placeholder="remark" name="remark"></textarea>
+</td>
+</tr>
+<tr>
+<td>
+Problem:
+</td>
+<td>
+<select name="problem"><option>Normal</option><option>Urgent</option></select>
+
+</td>
+</tr>
+  </table>
+        
+        <input type="submit" name="submit" value="Enter">
+<input type="hidden" name="ebid"  value="<%= data[0].ebid %>"  required>
+      
+    </center>
+
+</form>
+
+<script>
+
+
+function viewform(){
+document.getElementById('viewform').style.display="inline";
+document.getElementById('esc').style.backgroundColor="blue";
+document.getElementById('esc').disabled="true";
+}
+function csvform(){
+document.getElementById('csvform').style.display="inline";
+document.getElementById('csv').style.backgroundColor="blue";
+document.getElementById('csv').disabled="true";
+}
+
+</script>

@@ -1,0 +1,152 @@
+<% include header %>
+<div class="rdiv">
+<ul><li>
+<a onclick="viewform()" id="anl">Add New Location</a>
+</li>
+
+<li>
+<a href="">Update</a>
+</li>
+<li>
+<a href="">Delete</a>
+</li>
+</ul>
+</div>
+Basic customer Details:<%= data[0].cid %><br>
+<form  method="post" id="viewform" style="display:none">
+    <center>
+     <table id="signup"  width="500px" align="center" border="0" cellpadding="4px" cellspacing="8px" id="reg">
+            <tr>
+             <td>Zone</td>
+                <td>
+ <input list="a" name="zone"  autocomplete="off"  onchange='if(this.value!= 0) { load(this.value); }' required>
+
+                  <datalist id='a'>
+                    </datalist>
+
+                </td>
+                    <td>Location</td>
+                <td>
+ <input list="b" name="location"  autocomplete="off"  required>
+
+                  <datalist id='b'>
+                    </datalist>
+
+                </td>
+                   <td>Place</td>
+                <td>
+ <input type="text" name="place"  autocomplete="off"  required>
+ <input type="hidden" name="cid"   value="<%= data[0].cid %>" >
+
+                </td>
+                     <td>Contact Person</td>
+                <td>
+ <input type="text" name="contact_person"  autocomplete="off"  required>
+
+
+                </td>
+                </td>
+                     <td>Contact Number</td>
+                <td>
+ <input type="text" name="contact_number"  autocomplete="off" pattern="[7-9]{1}[0-9]{9}"  required>
+
+
+                </td>
+
+             
+                <td><input type="submit" name="submit" value="SAVE"></td>
+            </tr>
+
+        </table>
+    </center>
+
+</form>
+All loc:
+<table border="1">
+<tr>
+<td>S.No.</td><td>Zone</td><td>Location</td><td>Place</td><td>Contact Person</td><td>Contact Number</td><td>DELETE LOCATION</td><td>UPDATE LOCATION</td></tr>
+<% for(var i=0;i<data2.length;i++) { %>
+<tr>
+<td><a href="locdetail?l=<%= data2[i].lid %>"> <%= i+1 %> </a> </td>
+<td><%= data2[i].zone %> </td>
+<td><%= data2[i].location %> </td>
+<td><%= data2[i].place %> </td>
+<td><%= data2[i].contact_person %> </td>
+<td><%= data2[i].contact_number %> </td>
+<td><form method="post">
+<input type="submit" name="submit" value="Delete Location" onclick="return confirm('Are You Sure to Delete')">
+<input type="hidden" name="d" value="<%= data2[i].lid  %>"> 
+<input type="hidden" name="c" value="<%= data2[i].cid  %>"> 
+</form> </td>
+
+</tr>
+<% } %>	
+</table>
+
+<script>
+function viewform(){
+document.getElementById('viewform').style.display="inline";
+document.getElementById('anl').style.display="none";
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && (this.status == 200  || this.status == 304)) {
+	
+	var adata=new Array();
+	adata=JSON.parse(this.responseText);
+
+	
+	var select = document.getElementById('a');
+	     for(var i = select.options.length - 1 ; i > 0 ; i--) {
+         select.remove(i);
+}
+	
+	for(var i=0;i<adata.length;i++) { 
+		
+		    option = document.createElement('option');
+           
+
+           //option.setAttribute('label',adata[i].zone);
+            option.text = adata[i].zone ;
+           
+             option.value =adata[i].zone ;
+            select.appendChild(option);
+		 }
+	
+    // document.getElementById("demo").innerHTML = adata;
+    }
+  };
+  xhttp.open("GET", "ajax", true);
+  xhttp.send();
+}
+
+function load(val){
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && (this.status == 200 || this.status == 304)) {
+	
+	var adata=new Array();
+	adata=JSON.parse(this.responseText);
+
+	
+	var select = document.getElementById('b');
+	     for(var i = select.options.length - 1 ; i > 0 ; i--) {
+         select.remove(i);
+}
+	
+	for(var i=0;i<adata.length;i++) { 
+		
+		    option = document.createElement('option');
+            option.value =adata[i].location ;
+            option.text = adata[i].location ;
+            select.appendChild(option);
+		 }
+	
+
+    }
+  };
+  xhttp.open("GET", "ajax2?loc="+val,true);
+  xhttp.send();
+}
+
+</script>

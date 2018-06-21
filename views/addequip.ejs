@@ -1,0 +1,95 @@
+<% include header %>
+<%= title %>
+
+<form  method="post" >
+    <center>
+    
+
+   
+
+        <table id="addequip"  width="500px" align="center" border="0" cellpadding="4px" cellspacing="8px" >
+
+            <caption><h2>Add Equipment</h2></caption>
+            *:THIS FILED ARE REQUIRED
+            <tr>
+                <td>EQUIP CATEGORY*</td>
+                <td>
+ <input list="a" name="ec"  value='<%= value1 %>' autocomplete="off"  onchange='if(this.value!= 0) { this.form.submit(); }' required>
+
+                    <datalist id='a'  >
+                        
+                        <%  for(var i=0;i<result.length;i++){ %><option value='<%= result[i].EQUIPMENT_CATEGORY %>'><%= result[i].EQUIPMENT_CATEGORY %></option><%}%>
+                    </datalist>
+
+                </td>
+            </tr>
+             <tr>
+
+                <td>SUB-CATEGORY*</td>
+                <td>
+                 <input list="b" name="esc" value='<%= value2 %>'   autocomplete="off"  onchange='if(this.value != 0) { this.form.submit(); }' required>
+
+                    <datalist id='b' >
+                   
+                        <%  for(var i=0;i<result1.length;i++){ %><option value='<%= result1[i].EQUIPMENT_SUBCATEGORY %>'><%= result1[i].EQUIPMENT_SUBCATEGORY %></option><%}%>
+                    </datalist>
+
+
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>COMPANY/Manufacturer</td>
+                <td> <input list="c" value='<%= value3 %>' name="company" autocomplete="off"  onchange='if(this.value != 0) { this.form.submit(); }' required>
+                <datalist id='c'>
+                     
+                        <%  for(var i=0;i<result2.length;i++){ %><option value='<%= result2[i].COMPANY %>'><%= result2[i].COMPANY %></option><%}%>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td><span>MODEL</span></td>
+                <td>   <input list="d" value='<%= value4 %>' name="emodel" autocomplete="off"  onchange='if(this.value != 0) { this.form.submit(); }' required> 
+                 <datalist id='d' >
+                        
+                        <%  for(var i=0;i<result3.length;i++){ %><option value='<%= result3[i].MODEL %>'><%= result3[i].MODEL %></option><%}%>
+                    </datalist>
+                </td>
+            </tr>
+              <tr>
+                <td><span>NAME</span></td>
+               <td>  <input list="e"  value='<%= value5 %>'  name="ename" autocomplete="off"  onchange='if(this.value != 0) { this.form.submit(); }' required>  
+                 <datalist id="e" >
+                        
+                        <%  for(var i=0;i<result4.length;i++){ %><option value='<%= result4[i].EQUIPMENT_NAME %>'><%= result4[i].EQUIPMENT_NAME %></option><%}%>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>EQUIPMENT SPECIFICATION </td>
+                <td><textarea name="sp" rows="2" placeholder="all about equipment" >
+                  <% if(result5.length>0) {%><%= result5[0].EQUIPMENT_SPECIFICATION %> <% } %>
+                </textarea>
+                </td>
+            </tr>
+
+
+
+             <tr>
+                
+                <td><input type="reset" value="Reset Form" name="reset "></td>
+                <td><input type="submit" name="sub" value="Add Equipment"></td>
+            
+               
+            </tr>
+
+           
+          
+        </table>
+        <h2><%= status %></h2>
+    </center>
+
+</form>
+
+<% include footer %>

@@ -1,0 +1,18 @@
+<% include header %>
+search proposal on basis of state
+ALL proposal on which we can alter state final/fail/default proposed/amc
+
+<table border="1">
+<% for(var i=0;i<data.length;i++) { %>
+
+<tr>
+<td><%= i-0+1 %>
+</td>
+<td><%= data[i].ebid %> </td>
+<td><%= data[i].locid %> </td>
+<td><%= data[i].state %> </td>
+<td><a><%= data[i].comment %></a> </td>
+<td><select><option>final</option><option>amc</option><option>fail</option><option>proposed</option></select> </td>
+</tr>
+
+<% } %></table>

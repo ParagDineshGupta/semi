@@ -1,0 +1,238 @@
+<% include header %>
+
+<div class="rdiv">
+<ul><li>
+<a onclick="viewform()" id="ane">Add New Equipment</a>
+</li>
+<li>
+<a onclick="viewform2()" id="gc">General Complaint</a>
+</li>
+<li>
+<a href="">Delete Location</a>
+</li>
+<li>
+<a href="">Update Location</a>
+</li>
+</ul>
+</div>
+Basic location Details:<%= data[0].lid %><br>
+
+<form  method="post" id="viewform" style="display:none">
+    <center>
+     <table id="signup"  width="500px" align="center" border="0" cellpadding="4px" cellspacing="8px" id="reg">
+            <tr>
+              <td>
+                 <select id='EC' onchange='if(this.value!= 0) { dataload("ESC",this.value); }' required>
+                  <option value="0">Select Equipment Category</option>
+                  </select>
+                </td>
+              <td>
+                 <select id='ESC'  onchange='if(this.value!= 0) { dataload("COMPANY",this.value); }' required>
+                  <option value="0">Select Equipment Subcategory</option>
+                  </select>
+                </td>
+              <td>
+                 <select id='COMPANY' onchange='if(this.value!= 0) { dataload("MODEL",this.value); }' required>
+                  <option value="0">Select Equipment Company</option>
+                  </select>
+                </td>
+              <td>
+                 <select id='MODEL'  onchange='if(this.value!= 0) { dataload("NAME",this.value); }' required>
+                  <option value="0">Select Equipment Model</option>
+                  </select>
+                </td>
+              <td>
+                 <select id='NAME' onchange='if(this.value!= 0) { dataload("EID",this.value); }' required>
+                  <option value="0">Select Equipment Name</option>
+                  </select>
+                </td>
+                   </tr>
+                   <tr>
+                <td>Number of Equipments</td> 
+                 <td><input type="number" min="1" name="total"  autocomplete="off" value=""  required></td>
+                </tr>
+                   <tr>
+                     <td>Date of Starting</td>
+                <td>
+ <input type="date" name="startdate"  autocomplete="off" value=""  required>
+
+
+                </td>
+                <td>Last Date of Service </td>
+                <td>
+ <input type="date" name="lastdate"  autocomplete="off" value=""  required>
+
+
+                </td>
+
+
+             
+                <td><input type="submit" name="submit" value="SAVE"></td>
+            </tr>
+<input type="text" name="eid" id="EID" value="" readonly required>
+<input type="hidden" name="lid"  value="<%= data[0].lid %>"  required>
+        </table>
+    </center>
+
+</form>
+
+
+<form  method="post" id="viewform2" style="display:none">
+               <center id="gctable">
+  
+                <textarea rows="4" cols="50" placeholder="write complaint at here then click Enter"></textarea><input type="submit" name="submit" value="Enter" >
+<input type="hidden" name="lid"  value="<%= data[0].lid %>"  required>
+      
+    </center>
+
+</form>
+
+
+
+
+<span id="alert"></span>
+
+All equip:
+<table border="1">
+<tr><td>S.No.</td><td>Equipment</td><td>Equipment Quantity</td><td>Start Date</td><td>Last Date</td></tr>
+<% for(var i=0;i<data2.length;i++) { %>
+<tr>
+<td><a href="equipdetail?e=<%= data2[i].ebid %>">
+<%= i+1 %></a> </td>
+<td><%= data2[i].eid %> </td>
+<td><%= data2[i].total %> </td>
+<td><%= data2[i].startdate %> </td>
+<td><%= data2[i].lastdate %> </td>
+</tr>
+<% } %>	
+
+</table>
+
+<script>
+
+function dataload(nam,val){
+  
+   var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && (this.status == 200  || this.status == 304)) {
+  
+  var adata=new Array();
+  adata=JSON.parse(this.responseText);
+
+  if(nam=="EID")
+  {
+  if(adata.length==1)
+    document.getElementById(nam).value=adata[0].data;
+   else{
+    document.getElementById(nam).value="";
+    document.getElementById("alert").innerHTML="ERROR";
+   } 
+
+  }
+  else{
+  var select = document.getElementById(nam);
+       for(var i = select.options.length - 1 ; i > 0 ; i--) {
+         select.remove(i);
+}
+  
+  for(var i=0;i<adata.length;i++) { 
+    
+        option = document.createElement('option');
+            option.value =adata[i].data ;
+            option.text = adata[i].data ;
+            select.appendChild(option);
+     }
+
+  }
+ 
+     
+    }
+  };
+  if(nam=="EID")
+  {
+  var EC=document.getElementById('EC').value;
+  var ESC=document.getElementById('ESC').value;
+  var COMPANY=document.getElementById('COMPANY').value;
+  var MODEL=document.getElementById('MODEL').value;
+  var NAM2=document.getElementById('NAME').value;
+  xhttp.open("GET", "equipment?nam="+nam+"&EC="+EC+"&ESC="+ESC+"&COMPANY="+COMPANY+"&MODEL="+MODEL+"&NAM="+NAM2,true);}
+  else if(nam=="NAME")
+  {
+  var EC=document.getElementById('EC').value;
+  var ESC=document.getElementById('ESC').value;
+  var COMPANY=document.getElementById('COMPANY').value;
+  var MODEL=document.getElementById('MODEL').value;
+
+  xhttp.open("GET", "equipment?nam="+nam+"&EC="+EC+"&ESC="+ESC+"&COMPANY="+COMPANY+"&MODEL="+MODEL,true);}
+   else if(nam=="MODEL")
+  {
+  var EC=document.getElementById('EC').value;
+  var ESC=document.getElementById('ESC').value;
+  var COMPANY=document.getElementById('COMPANY').value;
+  
+
+  xhttp.open("GET", "equipment?nam="+nam+"&EC="+EC+"&ESC="+ESC+"&COMPANY="+COMPANY,true);}
+     else if(nam=="COMPANY")
+  {
+  var EC=document.getElementById('EC').value;
+  var ESC=document.getElementById('ESC').value;
+  xhttp.open("GET", "equipment?nam="+nam+"&EC="+EC+"&ESC="+ESC,true);}
+  else if(nam=="ESC")
+  {
+  var EC=document.getElementById('EC').value;
+  xhttp.open("GET", "equipment?nam="+nam+"&EC="+EC,true);}
+  else
+  { xhttp.open("GET", "equipment?nam="+nam+"&val="+val, true);}
+ 
+  xhttp.send();
+
+}
+
+function viewform(){
+document.getElementById('viewform').style.display="inline";
+document.getElementById('viewform2').style.display="none";
+document.getElementById('gc').style.backgroundColor="black";
+document.getElementById('ane').style.backgroundColor="blue";
+document.getElementById('ane').disabled="true";
+dataload("EC",""); 
+}
+function viewform2(){
+document.getElementById('viewform2').style.display="inline";
+document.getElementById('viewform').style.display="none";
+document.getElementById('ane').style.backgroundColor="black";
+document.getElementById('gc').disabled="true";
+document.getElementById('gc').style.backgroundColor="blue";
+
+}
+
+function load(val){
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && (this.status == 200 || this.status == 304)) {
+	
+	var adata=new Array();
+	adata=JSON.parse(this.responseText);
+
+	
+	var select = document.getElementById('b');
+	     for(var i = select.options.length - 1 ; i > 0 ; i--) {
+         select.remove(i);
+}
+	
+	for(var i=0;i<adata.length;i++) { 
+		
+		    option = document.createElement('option');
+            option.value =adata[i].location ;
+            option.text = adata[i].location ;
+            select.appendChild(option);
+		 }
+	
+
+    }
+  };
+  xhttp.open("GET", "ajax2?loc="+val,true);
+  xhttp.send();
+}
+
+</script>

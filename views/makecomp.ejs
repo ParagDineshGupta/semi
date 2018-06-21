@@ -1,0 +1,29 @@
+<% include header %>
+<%= title %>
+//contact number
+<form method="post">
+    
+   <span>Customer</span>
+    <input type="text" name="CUST_NAME_LOC_CODE" />
+     <span>location</span>
+   // <input type="text"  />name="loc"
+     <span>floor</span>
+  //  <input type="number"  />name="floor"
+    <span>location</span>
+   // <input type="text"  />name="location"
+    
+    <br>
+    Nature of complain:
+    c1<input type="radio" name="NATURE_OF_COMPLAIN" value="c1">
+    c2<input type="radio" name="NATURE_OF_COMPLAIN" value="c2">
+    c3<input type="radio" name="NATURE_OF_COMPLAIN" value="c3">
+    c4<input type="radio" name="NATURE_OF_COMPLAIN" value="c4">
+    <br>
+    Complain Description:
+    <textarea name="COMPLAIN_DESC"></textarea><br>
+    Name of the person who complained:
+    <input type="text" name="PERSON_WHO_MADE_THE_COMPLAIN" required><br>
+    <input type="submit" value="Submit Complain" >
+</form>
+
+<% include footer %>

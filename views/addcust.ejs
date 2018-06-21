@@ -1,0 +1,56 @@
+<% include header %>
+<%= title %>
+<form  method="post" >
+    <center>
+        <table id="signup"  width="500px" align="center" border="0" cellpadding="4px" cellspacing="8px" id="reg">
+
+            <caption><h2>Customer Registration</h2></caption>
+            *:THIS FILED ARE REQUIRED
+            <tr>
+                <td>CUSTOMER NAME*</td>
+                <td><input type="text" name="cn" autocomplete="off"  required></td>
+            </tr>
+
+            <tr>
+                <td>EMAIL</td>
+                <td><input type="email" name="em" ></td>
+            </tr>
+            <tr>
+                <td><span>TEL_OFF*</span></td>
+                <td>	<input type="tel" name="mob" maxlength="10" minlength="10" placeholder="10 digit number" required>
+                </td>
+            </tr>
+            <tr>
+                <td><span>TEL_RESD</span></td>
+                <td>	<input type="tel" name="amob" maxlength="10" minlength="10" placeholder="10 digit number" >
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>CONTACT PERSON*</td>
+                <td><input type="text" name="cp" autocomplete="off"  required></td>
+            </tr>
+            <tr>
+                <td>SPECIAL_COMENT </td>
+                <td><textarea name="splcmnt" rows="2" placeholder=""></textarea>
+                </td>
+            </tr>
+            <tr><td>CUSTOMER TYPE</td>
+                <td><select name='type'>
+                        <option value='regular'>Regular</option>
+                        <option value='vvip'>VVIP</option>
+
+                    </select></td>
+            </tr>
+            <tr>
+                <td><input type="reset" value="Reset Form" name="reset "></td>
+                <td><input type="submit" name="submit" value="Add Customer"></td>
+            </tr>
+        </table>
+        <h2><%= status %></h2>
+    </center>
+
+</form>
+
+<% include footer %>

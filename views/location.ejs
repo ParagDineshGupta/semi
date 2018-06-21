@@ -1,0 +1,140 @@
+<% include header %>
+<%= title %><%= data2 %>
+<button style="float:right" onclick="viewform()" >ADD NEW LOCATION</button>
+<form  method="post" id="viewform" style="display:none">
+    <center>
+        <table id="signup"  width="500px" align="center" border="0" cellpadding="4px" cellspacing="8px" id="reg">
+
+
+            <tr>
+             <td>Zone</td>
+                <td>
+ <input list="a" name="zone"  autocomplete="off"  onchange='if(this.value!= 0) { load(this.value); }' required>
+
+                  <datalist id='a'>
+                    </datalist>
+
+                </td>
+                    <td>Location</td>
+                <td>
+ <input list="b" name="location"  autocomplete="off"  required>
+
+                  <datalist id='b'>
+                    </datalist>
+
+                </td>
+                   <td>Place</td>
+                <td>
+ <input type="text" name="place"  autocomplete="off"  required>
+ <input type="hidden" name="cid"   value="<%= data2 %>" >
+
+                </td>
+                     <td>Contact Person</td>
+                <td>
+ <input type="text" name="Contact Person"  autocomplete="off"  required>
+
+
+                </td>
+                </td>
+                     <td>Contact Number</td>
+                <td>
+ <input type="text" name="Contact Number"  autocomplete="off"  required>
+
+
+                </td>
+
+             
+                <td><input type="submit" name="submit" value="SAVE"></td>
+            </tr>
+
+        </table>
+    </center>
+
+</form>
+<table border="1">
+<tr>
+<td>S.No.</td><td>Zone</td><td>Location</td><td>Place</td><td>DELETE LOCATION</td><td>UPDATE LOCATION</td></tr>
+<% for(var i=0;i<data.length;i++) { %>
+<tr>
+<td><a href="locdetail?l=<%= data[i].lid %>"><%= i+1 %></a> </td>
+<td><%= data[i].zone %> </td>
+<td><%= data[i].location %> </td>
+<td><%= data[i].place %> </td>
+<td><form method="post">
+<input type="submit" name="submit" value="Delete Location" onclick="return confirm('Are You Sure to Delete')">
+<input type="hidden" name="d" value="<%= data[i].lid  %>"> 
+<input type="hidden" name="c" value="<%= data[i].cid  %>"> 
+</form> </td>
+
+</tr>
+<% } %>	
+</table>
+<script>
+function update(val) {
+  
+}
+</script>
+<% include footer %>
+<script>
+function viewform(){
+document.getElementById('viewform').style.display="inline";
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && (this.status == 200  || this.status == 304)) {
+	
+	var data=new Array();
+	data=JSON.parse(this.responseText);
+
+	
+	var select = document.getElementById('a');
+	     for(var i = select.options.length - 1 ; i > 0 ; i--) {
+         select.remove(i);
+}
+	
+	for(var i=0;i<data.length;i++) { 
+		
+		    option = document.createElement('option');
+            option.value =data[i].zone ;
+            option.text = data[i].zone ;
+            select.appendChild(option);
+		 }
+	
+    // document.getElementById("demo").innerHTML = data;
+    }
+  };
+  xhttp.open("GET", "ajax", true);
+  xhttp.send();
+}
+	
+function load(val){
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && (this.status == 200 || this.status == 304)) {
+	
+	var data=new Array();
+	data=JSON.parse(this.responseText);
+
+	
+	var select = document.getElementById('b');
+	     for(var i = select.options.length - 1 ; i > 0 ; i--) {
+         select.remove(i);
+}
+	
+	for(var i=0;i<data.length;i++) { 
+		
+		    option = document.createElement('option');
+            option.value =data[i].location ;
+            option.text = data[i].location ;
+            select.appendChild(option);
+		 }
+	
+
+    }
+  };
+  xhttp.open("GET", "ajax2?loc="+val,true);
+  xhttp.send();
+}
+
+
+</script>

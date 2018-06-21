@@ -1,0 +1,48 @@
+<% include header %>
+<div class="rdiv">
+<ul><li>
+<a href="addcust">Add New Customer</a>
+</li>
+</ul>
+</div>
+<%= title %>
+<form  method="post" >
+    <center>
+    <table id="signup"  width="500px" align="center" border="0" cellpadding="4px" cellspacing="8px" id="reg">
+            <tr>
+                <td>CUSTOMER NAME</td>
+                <td><input type="text" name="cn" autocomplete="off"  required></td>
+                <td><input type="submit" name="submit" value="SEARCH"></td>
+            </tr>
+
+        </table>
+    </center>
+
+</form>
+
+<table border="1" id="a">
+<tr>
+<td>S.No.</td>
+<td>CUSTOMER NAME</td><td>EMAIL</td><td>TEL OFF</td><td>MOBILE</td><td>CONTACT PERSON</td><td>SPL COMNT</td><td>CLASSIFICATION</td></tr>
+<% for(var i=0;i<data.length;i++) { %>
+<tr>
+<td><a href="custdetail?c=<%= data[i].cid %>">
+<%= (p-0)+(i-0)+(1-0) %></a> </td>
+<td><a href="custdetail?c=<%= data[i].cid %>">
+<%= data[i].CUST_NAME %></a> </td>
+<td><%= data[i].EMAIL %> </td>
+<td><%= data[i].TEL_OFF %> </td>
+<td><%= data[i].TEL_RESD %> </td>
+<td><%= data[i].CONT_PERSON %> </td>
+<td><%= data[i].SPL_COMNT %> </td>
+<td><%= data[i].CLASSIFICATION %> </td>
+</tr>
+<% } %>	
+</table>
+<% if(p!='0') { %>
+<form id="prev" method="post" style="display:inline"><input type="hidden" name="row" value="<%= p %>">
+<input type="submit" name="submit" value="Previous"></form><% } %>
+<% if(n!='0') { %>
+<form id="prev" method="post"  style="display:inline"><input type="hidden" name="row" value="<%= n %>">
+<input type="submit" name="submit" value="Next"></form><% } %>
+<% include footer %>
