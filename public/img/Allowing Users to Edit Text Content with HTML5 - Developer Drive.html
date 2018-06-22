@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)http://www.developerdrive.com/2012/06/allowing-users-to-edit-text-content-with-html5/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Allowing Users to Edit Text Content with HTML5 - Developer Drive</title>    
+<link rel="profile" href="http://gmpg.org/xfn/11">
+
+<link href="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/css" rel="stylesheet">
+<link href="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/css(1)" rel="stylesheet">
+<link href="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/css(2)" rel="stylesheet">
+<link href="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/css(3)" rel="stylesheet">
+    
+<link rel="stylesheet" type="text/css" media="all" href="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/style.css">
+<link rel="icon" href="http://www.developerdrive.com/wp-content/themes/dd_v/images/favicon.ico" type="image/x-icon"> 
+
+
+<!-- All in One SEO Pack 2.6 by Michael Torbert of Semper Fi Web Design[138,234] -->
+<meta name="keywords" content="firefox,html,html element,html5,internet explorer,javascript,web browser,web page">
+
+<link rel="canonical" href="http://www.developerdrive.com/2012/06/allowing-users-to-edit-text-content-with-html5/">
+<!-- /all in one seo pack -->
+<link rel="dns-prefetch" href="http://www.developerdrive.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Web Development Blog, News and Tutorials » Feed" href="http://www.developerdrive.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Web Development Blog, News and Tutorials » Comments Feed" href="http://www.developerdrive.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Web Development Blog, News and Tutorials » Allowing Users to Edit Text Content with HTML5 Comments Feed" href="http://www.developerdrive.com/2012/06/allowing-users-to-edit-text-content-with-html5/feed/">
+<link rel="stylesheet" id="yarppWidgetCss-css" href="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/widget.css" type="text/css" media="all">
+<link rel="stylesheet" id="wordpress-popular-posts-css-css" href="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/wpp.css" type="text/css" media="all">
+<script src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/f(4).txt"></script><script src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/ca-pub-6570377960606544.js.download"></script><script src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/ca-pub-6570377960606544.js.download"></script><script type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpp_params = {"rest_api":"1","sampling_active":"0","sampling_rate":"100","ajax_url":"http:\/\/www.developerdrive.com\/wp-json\/wordpress-popular-posts\/v1\/popular-posts\/","action":"update_views_ajax","ID":"1917","token":"3674f1c767","debug":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/wpp-4.1.0.min.js.download"></script>
+<link rel="https://api.w.org/" href="http://www.developerdrive.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.developerdrive.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.developerdrive.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Manipulating HTML5’s native audio with JavaScript" href="http://www.developerdrive.com/2012/06/manipulating-html5s-native-audio-with-javascript/">
+<link rel="next" title="Utilize Favicons and Meta Tags to Boost Your Website’s Visibility" href="http://www.developerdrive.com/2012/06/utilize-favicons-and-meta-tags-to-boost-your-website%e2%80%99s-visibility/">
+
+<link rel="shortlink" href="http://www.developerdrive.com/?p=1917">
+<link rel="alternate" type="application/json+oembed" href="http://www.developerdrive.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.developerdrive.com%2F2012%2F06%2Fallowing-users-to-edit-text-content-with-html5%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.developerdrive.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.developerdrive.com%2F2012%2F06%2Fallowing-users-to-edit-text-content-with-html5%2F&amp;format=xml">
+<link rel="https://github.com/WP-API/WP-API" href="http://www.developerdrive.com/wp-json">
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		if (window.wfLogHumanRan) { return; }
+		window.wfLogHumanRan = true;
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.developerdrive.com/?wordfence_lh=1&hid=2437C505FFB9A6CE9DEA7D9C76649411');
+</script>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+<!--[if lt IE 8]>
+  <link rel="stylesheet" type="text/css" media="all" href="http://www.developerdrive.com/wp-content/themes/dd_v/css/ie7.css?v=2" />
+<![endif]-->
+
+
+
+<script type="text/javascript" async="" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/bsa.js.download"></script><link rel="preload" href="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/f(5).txt" as="script"><script type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/f(5).txt"></script><link rel="preload" href="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/f(6).txt" as="script"><script type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/f(6).txt"></script><script type="text/javascript" id="_bsap_js_c9083c64520964b2a28d469f108d54bb" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/s_c9083c64520964b2a28d469f108d54bb.js.download" async="async"></script><script async="" type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/count.js.download"></script><script type="text/javascript" async="" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/embed.js.download"></script><script type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/pro.js.download" id="_bsap_premium_pro"></script><script type="text/javascript" id="_bsaPRO_js" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/saved_resource" async="async"></script><script id="_bsa_srv-CKYIT2QY_0" type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/CKYIT2QY.json"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_customer_chat_bounce_in{animation-duration:250ms;animation-name:fb_bounce_in}.fb_customer_chat_bounce_out{animation-duration:250ms;animation-name:fb_fade_out}.fb_customer_chat_bubble_pop_in{animation-duration:250ms;animation-name:fb_customer_chat_bubble_bounce_in_animation}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{background-color:#fff;height:100%;overflow:hidden;position:fixed;visibility:hidden;width:100%}@keyframes fb_fade_out{from{opacity:1}to{opacity:0}}@keyframes fb_bounce_in{0%{opacity:0;transform:scale(.8, .8);transform-origin:100% 100%}10%{opacity:.1}20%{opacity:.2}30%{opacity:.3}40%{opacity:.4}50%{opacity:.5}60%{opacity:.6}70%{opacity:.7}80%{opacity:.8;transform:scale(1.03, 1.03)}90{opacity:.9}100%{opacity:1;transform:scale(1, 1)}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}</style><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.3999ac261b914f8b8b5e85df0ff3eaea.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.267fd1014695bb1a035de2f6e53d1baa.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.33067ddbd4792de0b384ceb588602715.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><script type="text/javascript" async="" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/saved_resource(1)"></script></head>
+<body class="post-template-default single single-post postid-1917 single-format-standard inner-body" "="">
+<!-- BuySellAds Ad Code -->
+<script type="text/javascript">
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = '//s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+</script>
+<!-- End BuySellAds Ad Code -->
+
+
+
+<div id="global-wrap">
+
+<div id="header-wrap">
+
+<header id="header">
+    
+        
+    <a class="hamburger-to-close" href="javascript:;" id="mobile-menu-btn">
+		  <span class="hamburger-middle"></span>
+    </a>
+     
+    <a id="logo-wrap" href="http://www.developerdrive.com/">
+      <span id="logo"></span>
+    </a>
+  
+    <div id="top-menu">
+        
+        
+        <a class="mm-item" href="http://www.developerdrive.com/">
+        <span class="menu-button mb-1">
+          <span class="border"></span>
+          <span class="back"></span>
+        </span>
+        Home</a>
+        
+        
+        <div class="mm-item-wrap">
+          <a class="mm-item" href="http://www.developerdrive.com/categories">
+            <span class="menu-button mb-2">
+              <span class="border"></span>
+              <span class="back"></span>
+            </span>
+        
+          Articles
+          <span class="mm-darrow">▾</span>
+          </a>
+          <div class="categories-drop-down">
+          	         <div><a href="http://www.developerdrive.com/category/css/">CSS</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/deals/">Deals</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/html/">HTML</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/html5/">HTML5</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/java/">Java</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/javascript/">JavaScript</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/jquery-2/">jQuery</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/miscellaneous/">Miscellaneous</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/mobile/">Mobile</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/mysql/">MySQL</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/news/">News</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/php/">PHP</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/resources/">Resources</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/security-2/">Security</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/snippet-2/">Snippet</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/tools/">Tools</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/tutorial-2/">Tutorial</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/web-development-2/">Web Development</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/web-services/">Web Services</a></div>
+          	         <div><a href="http://www.developerdrive.com/category/wordpress/">WordPress</a></div>
+                    </div>  
+        </div>
+        
+                
+               
+       <div class="mm-item-wrap"> 
+         <a class="mm-item" href="http://www.developerdrive.com/authors">
+        <span class="menu-button mb-4">
+          <span class="border"></span>
+          <span class="back"></span>
+        </span>
+        
+        Authors
+        <span class="mm-darrow">▾</span>
+        
+        </a>
+        
+        <div class="menu-drop-down authors-drop-down">
+          <div class="menu-drop-down-precon">
+            <div class="drop-down-content">
+         <div>
+            <a href="http://www.developerdrive.com/author/Sara-Vieira">Sara Vieira (81)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Ezequiel-Bruni">Ezequiel Bruni (35)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Marc-Schenker">Marc Schenker (21)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/DeveloperDrive-Staff">DeveloperDrive Staff (15)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Rafay-Ansari">Rafay Ansari (15)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Brenda-Stokes-Barron">Brenda Stokes Barron (14)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Maddy-Osman">Maddy Osman (14)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Jackson-Mwendwa-Muoki">Jackson Mwendwa Muoki (12)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Justas-Markus">Justas Markus (9)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Emma-Grant">Emma Grant (9)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Eric-Karkovack">Eric Karkovack (9)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Rudolph-Musngi">Rudolph Musngi (8)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Paddi-MacDonnell">Paddi MacDonnell (5)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Jake-Rocheleau">Jake Rocheleau (5)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Kendra-Gaines">Kendra Gaines (4)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Tahir-Taous">Tahir Taous (4)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Benjie-Moss">Benjie Moss (3)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Sebastian-Green">Sebastian Green (3)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Greg-Sidelnikov">Greg Sidelnikov (2)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Daniel-Pataki">Daniel Pataki (2)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Sam-Norton">Sam Norton (2)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Ajeet-Yadav">Ajeet Yadav (2)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/James-George">James George (2)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Julia-Blake">Julia Blake (2)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Josh-Medeski">Josh Medeski (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Sam-Jones">Sam Jones (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Steven-Wu">Steven Wu (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Steve-Ralston">Steve Ralston (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Sherman-Lee">Sherman Lee (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Susan-Smith">Susan Smith (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Cameron-Chapman">Cameron Chapman (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Kerry-Butters">Kerry Butters (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Michael-Berndt">Michael Berndt (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Chad-Cantrell">Chad Cantrell (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Caleb-Mellas">Caleb Mellas (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Anna-Ladoshkina">Anna Ladoshkina (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Woody-Hayday">Woody Hayday (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Paula-Borowska">Paula Borowska (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Neill-Feather">Neill Feather (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Kshitiz-Shankar">Kshitiz Shankar (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Andrew-May">Andrew May (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Natalie-Pavlovskaya">Natalie Pavlovskaya (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/James-Montgomery">James Montgomery (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Stephen-Moyers">Stephen Moyers (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Mira-Brody">Mira Brody (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Cassandra-Naji">Cassandra Naji (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Jessica-F-Carter">Jessica F. Carter (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Steven-Blake">Steven Blake (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Dean-Weaver">Dean Weaver (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Lionel-Ndifon">Lionel Ndifon (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Joshua-Althauser">Joshua Althauser (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Donovan-Hutchinson">Donovan Hutchinson (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Jonathan-Kelley">Jonathan Kelley (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Email-Eskiz">Emin Sinanyan (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Gabriel-Manricks">Gabriel Manricks (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Angie-Vella">Angie Vella (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Simon-Walker">Simon Walker (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Bogdan-Sandu">Bogdan Sandu (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Nick-Bergh">Nick Bergh (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Peter-Bailey">Peter Bailey (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Louis-Lazaris">Louis Lazaris (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Michiel-Mulders">Michiel Mulders (1)</a>
+         </div>
+                  <div>
+            <a href="http://www.developerdrive.com/author/Anna-">Anna  (1)</a>
+         </div>
+                  
+</div>             </div>
+        </div>
+        <!--<div class="drop-down-fader ddf-authors"></div>-->
+        
+        </div>
+        
+        <div class="mm-item-wrap">
+        <a class="mm-item" href="http://www.mightydeals.com/?ref=developerdrivemenu">
+        <span class="menu-button mb-5">
+          <span class="border"></span>
+          <span class="back"></span>
+        </span>
+        Deals
+        <span class="mm-darrow">▾</span>
+        </a>
+        
+        <div class="menu-drop-down deals-drop-down">
+            <div><a href="http://www.mightydeals.com/category/bundles-deals?ref=developerdrivemenu">Bundles</a></div>
+
+<div><a href="http://www.mightydeals.com/category/courses-deals?ref=developerdrivemenu">Courses</a></div>
+
+<div><a href="http://www.mightydeals.com/category/ebooks-deals?ref=developerdrivemenu">eBooks</a></div>
+
+<div><a href="http://www.mightydeals.com/category/fonts-deals?ref=developerdrivemenu">Fonts</a></div>
+
+<div><a href="http://www.mightydeals.com/category/?ref=developerdrivemenu">Goods</a></div>
+
+<div><a href="http://www.mightydeals.com/category/graphics-deals?ref=developerdrivemenu">Graphics</a></div>
+
+<div><a href="http://www.mightydeals.com/category/icons-deals?ref=developerdrivemenu">Icons</a></div>
+
+<div><a href="http://www.mightydeals.com/category/scripts-plugins-deals?ref=developerdrivemenu">Plugins</a></div>
+
+<div><a href="http://www.mightydeals.com/category/software-deals?ref=developerdrivemenu">Software</a></div>
+
+<div><a href="http://www.mightydeals.com/category/templates-themes-deals?ref=developerdrivemenu">Themes</a></div>
+
+        </div>
+        
+        </div>
+        
+        
+        <a class="mm-item" href="http://webdesignernews.com/">
+        <span class="menu-button mb-3">
+          <span class="border"></span>
+          <span class="back"></span>
+        </span>
+        News</a>
+        
+        
+        
+                
+        
+        
+    </div>
+    
+    
+    
+    <form action="http://www.developerdrive.com/" method="get" class="search-form">
+      <div id="search-box-wrap" class="">
+            <input type="text" class="search-box inactive" name="s" placeholder="Search" autocomplete="off">
+            <a href="javascript:;" class="icon-cancel-circled" id="close-f-btn"></a>
+      </div>             
+      
+            
+    </form>
+    <a href="javascript:;" class="search-ico" id="search-f-btn"></a>
+    
+    
+    
+        
+   
+   
+ 
+</header> <!-- header-wrap  -->
+
+</div>
+
+
+ 
+
+<div id="main-lock" class="w-block">
+
+
+
+ 
+  <div id="main">
+      
+      
+      		
+			<div id="content" class="single-content">
+      			 
+  
+
+   
+
+
+  <article id="post-1917" class="post-article">
+  
+   <div class="hppp-clr hppp-title-block">
+        
+        
+        
+        
+        
+        
+                
+        
+        <div class="hppp-category">
+                 
+                   
+           <a href="http://www.developerdrive.com/category/html5/">HTML5</a>
+          
+                </div>
+        
+        <h1 class="hp-post-title">
+          
+            Allowing Users to Edit Text Content with HTML5          
+        </h1>
+        
+         <div class="hppp-author">
+            <span class="hppp-auth-lb">By <a href="http://www.developerdrive.com/author/DeveloperDrive-Staff">DeveloperDrive Staff</a></span>
+        </div>
+        
+        
+                
+      </div>
+  
+			
+			
+			<div class="entry-content-wrap">
+		    
+         <div id="article-sticky-stuff">
+  
+  <div class="sticky-shares-wrap">
+  <div class="sticky-shares">
+    
+    <div class="post-share-row psr-color">
+      <a onclick="openFbShare(this)" href="javascript:void(0);" data-url="http://www.developerdrive.com/2012/06/allowing-users-to-edit-text-content-with-html5/" data-href="http://www.developerdrive.com/2012/06/allowing-users-to-edit-text-content-with-html5/" class="psi-lnk psi-fb"><span class="p-share-icon icon-facebook"></span> 
+            
+       </a>
+    </div>
+    
+    <div class="post-share-row psr-color">
+     <a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.developerderive.com%2F&amp;via=developerdrive&amp;text=Allowing+Users+to+Edit+Text+Content+with+HTML5&amp;source=tweetbutton&amp;url=http://www.developerdrive.com/2012/06/allowing-users-to-edit-text-content-with-html5/" target="_blank" class="psi-lnk psi-tw"><span class="p-share-icon icon-twitter"></span>  
+      </a>
+    </div>
+    
+    <div class="post-share-row psr-color">
+      <a href="javascript:;" data-url="http://www.developerdrive.com/2012/06/allowing-users-to-edit-text-content-with-html5/" onclick="openGplusg(this);" class="psi-lnk psi-gplus"><span class="p-share-icon"></span>  
+       
+      </a>
+    </div>
+    
+    <div class="post-share-row">
+      <a href="http://www.developerdrive.com/2012/06/allowing-users-to-edit-text-content-with-html5/#comments-wrap" class="psi-lnk psi-service scroll-to"><span class="p-share-icon icon-comment-1"></span></a>
+    </div>
+    
+    <div class="post-share-row">
+      
+      <a href="javascript:window.print()" class="psi-lnk psi-service"><span class="p-share-icon icon-print"></span></a>
+    </div>
+    
+    <div class="post-share-row">
+          <a href="mailto:?subject=Check%20out%20this%20article:%20Allowing%20Users%20to%20Edit%20Text%20Content%20with%20HTML5&amp;body=http://www.developerdrive.com/2012/06/allowing-users-to-edit-text-content-with-html5/" class="psi-lnk psi-service"><span class="p-share-icon icon-mail-alt"></span></a>
+    </div>
+    
+  
+
+  </div> <!-- sticky-shares -->
+  </div>
+  
+  
+  
+  </div>         
+         
+                   <div class="entry-content se-content">
+          
+                                                                                           
+          
+                              
+          			    <p>With HTML5, you can set any of your Web page text elements to be editable by users. Using the “contenteditable” attribute, you can instruct the browser to allow users to insert, delete and alter the text your page contains as they view it. There are many possible uses for this technique, such as allowing users to customize the way your pages appear to them each time they visit. In this tutorial, we will run through the basics of letting users edit your text content, including saving their edits for future reference using the HTML5 storage model.<span id="more-1917"></span></p>
+<h3>Create a Page</h3>
+<p>You can add the techniques in this tutorial to any existing HTML5 pages you have. Otherwise, create your HTML5 Web page using the following structure:</p>
+<div class="highlight"><pre class="brush: js hljs javascript">&lt;!DOCTYPE html&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="undefined">
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span></pre></div>
+<p>You don’t actually need a script section to make elements editable but we are going to demonstrate storing the user edits, for which need some JavaScript.</p>
+<h3>Add an Editable Element</h3>
+<p>Add an editable element in the body section of your page using the following markup:</p>
+<div class="highlight"><pre class="brush: js hljs javascript">&lt;div id=<span class="hljs-string">"edit"</span> contenteditable=<span class="hljs-string">"true"</span>&gt;
+Here is the element<span class="hljs-string">'s original content
+&lt;/div&gt;</span></pre></div>
+<p>The “contenteditable” attribute is all the browser needs to know that users should be able to alter the content of the element. The ID attribute is for our JavaScript function. If you save and open your page in a browser now you will see that you can delete and edit the text content. Most browsers display a dotted border around an editable element while it is being edited.</p>
+<h3>Save User Edits</h3>
+<p>Let’s assume that we are making the element editable to allow users to dictate what text should appear within it when they next visit the page. Add a button in the body of your page, calling a JavaScript function to save whatever the element contains after user edits:</p>
+<div class="highlight"><pre class="brush: js hljs javascript">&lt;input type=<span class="hljs-string">"button"</span> value=<span class="hljs-string">"save my edits"</span> onclick=<span class="hljs-string">"saveEdits()"</span>/&gt;</pre></div>
+<p>Once the user has edited the element, they can press this button to save their changes. <em>You could alternatively carry out the saving automatically, detecting key presses and saving whenever the user edit occurs.</em> Let’s also include an element to provide confirmation that the changes have been saved. On initially viewing the page, this element will display instructions:</p>
+<div class="highlight"><pre class="brush: js hljs javascript">&lt;div id=<span class="hljs-string">"update"</span>&gt; - Edit the text and click to save <span class="hljs-keyword">for</span> next time&lt;<span class="hljs-regexp">/div&gt;</span></pre></div>
+<p>When the edits are saved to HTML5 storage, we will update this text to let the user know.</p>
+<p>In the script section in your page head, add the following function to process saving the user edits:</p>
+<div class="highlight"><pre class="brush: js hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">saveEdits</span>(<span class="hljs-params"></span>) </span>{
+
+<span class="hljs-comment">//get the editable element</span>
+<span class="hljs-keyword">var</span> editElem = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"edit"</span>);
+
+<span class="hljs-comment">//get the edited element content</span>
+<span class="hljs-keyword">var</span> userVersion = editElem.innerHTML;
+
+<span class="hljs-comment">//save the content to local storage</span>
+localStorage.userEdits = userVersion;
+
+<span class="hljs-comment">//write a confirmation to the user</span>
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"update"</span>).innerHTML=<span class="hljs-string">"Edits saved!"</span>;
+
+}</pre></div>
+<p>This code retrieves the element content before saving it to the Local Storage object. The Local Storage object stores data that remains accessible on subsequent user visits. This will allow us to retrieve the information again if the user re-visits the page in future. If you only want to save the user edits for the current session, use the Session Storage object instead. Finally, the function writes a confirmation message to the page, to let the user know that their edits have been saved.</p><div class="post-middle-ads"><script async="" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/f(7).txt"></script>
+<!-- DeveloperDrive - 336x280 -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-6570377960606544" data-ad-slot="5312411710" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><iframe width="336" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;width:336px;height:280px;" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/saved_resource(3).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>Now we need to handle the situation in which the user has visited before and has edits saved. Extend your page opening body tag as follows:</p>
+<div class="highlight"><pre class="brush: js hljs javascript">&lt;body onload=<span class="hljs-string">"checkEdits()"</span>&gt;</pre></div>
+<p>Each time a user visits the page, we will check to see if they have stored edits. Add the following function in the script area of your page head:</p>
+<div class="highlight"><pre class="brush: js hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkEdits</span>(<span class="hljs-params"></span>) </span>{
+
+<span class="hljs-comment">//find out if the user has previously saved edits</span>
+<span class="hljs-keyword">if</span>(localStorage.userEdits!=<span class="hljs-literal">null</span>)
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"edit"</span>).innerHTML = localStorage.userEdits;
+}</pre></div>
+<p>When a user visits, they will see the default text if they have no edits saved from past visits. If the user has saved edits in the past, they will see their own saved text in place of the default text. The user can also make future edits and save them at any time.</p>
+<p>Save your page and test it in a browser to ensure it works. You can save multiple items of data using HTML5 storage. This means that you can combine “contenteditable” with the storage framework in HTML5 to create highly customizable user interfaces, allowing your users a good level of control over the browsing experience.</p>
+<h3>Scripting Options</h3>
+<p>You can use JavaScript functions to alter the editable state of your page elements if necessary. The following syntax stops the element being editable:</p>
+<div class="highlight"><pre class="brush: js hljs javascript"><span class="hljs-keyword">var</span> editElem = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"edit"</span>);
+editElem.contentEditable=<span class="hljs-string">"false"</span>;</pre></div>
+<p>The “contenteditable” attribute can be set to true, false or inherit – in which case the property is determined by whether or not the parent element is editable.</p>
+<h3>Conclusion</h3>
+<p>With HTML5 features, you need to consider browser support issues. However, the good news is that the “contenteditable” attribute is supported by all of the main browsers already, including Internet Explorer, Firefox, Opera, Safari and Chrome. You can use the techniques in the above examples pretty freely, as the Local and Session Storage objects are also widely supported.</p>
+<p>Try it out here:&nbsp;<a href="http://www.developerdrive.com/demo/edit_text/edit_text_demo.html" class="txt-lnk">http://www.developerdrive.com/demo/edit_text/edit_text_demo.html</a></p>         
+         
+			    </div>
+          
+          
+<div class="bottom-author-bio">
+  <img alt="" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/none.png" srcset="http://2.gravatar.com/avatar/?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo avatar-default" height="80" width="80">    
+  <div class="author-bio-name">By <a href="http://www.developerdrive.com/author/sue-smith">Sue Smith</a></div> 
+  <div class="author-bio-text">
+  Sue Smith works as a Web/ software developer and technical writer based in the UK: see benormal.info for details. Sue has written for various clients including Smashing Magazine and Mobiletuts+. She also does a little Android development and some comedy writing.  
+  <a href="http://www.developerdrive.com/author/sue-smith">More articles</a> by Sue Smith  </div>
+  
+  <div class="clr"></div>
+</div>
+
+          
+                    
+                    
+                   
+         
+         
+			   <div id="comments-wrap"> 
+			    <div id="comments">
+            
+            
+<div id="disqus_thread"><iframe id="dsq-app339" name="dsq-app339" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/saved_resource(4).html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 4642px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+          </div>
+         </div> 
+          
+         
+			    
+			</div>  <!-- entry-conte-wrap -->
+			
+			
+	   <div class="clr"></div>
+	</article>
+	
+  
+  
+  
+						</div><!-- #content -->
+
+
+
+      
+  
+	   </div><!-- #main -->
+	  
+<div id="sidebar">
+  
+  
+  <div>
+   <!-- BuySellAds.com Zone Code -->
+    <div id="bsap_1264967" class="bsap bsap_1264967" data-serve="CWAD6KE">
+<style type="text/css">
+div.bsap_1264967{width:100%;display:block;}div.bsap_1264967 a{width:300px;}div.bsap_1264967 a img{padding:0;}div.bsap_1264967 a em{font-style:normal;}div.bsap_1264967 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden;float:left;}
+div.bsap_1264967 img{border:0;clear:right;}
+div.bsap_1264967 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}
+div.bsap_1264967 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}div.bsap_1264967 a{line-height:100%;}div.bsap_1264967 a.adhere{width:300px;height:250px;line-height:2000%;}html>body div.bsap_1264967 a.adhere{width:298px;height:248px;}div.bsap_1264967 img.s{height:0;width:0;}div.bsap_1264967{line-height:9px;}div.bsap_1264967 .bsap_adhere a{height:19px !important;width:298px !important;font-size:10px;background:#f1f1f1;border:1px solid #e1e1e1;border-top:none;border-radius: 0 0 2px 2px;line-height:16px;}.bsap_backfillframe{border:0;}
+</style>
+<a href="http://srv.buysellads.com/ads/click/x/GTND42QLFTADK2QYFTS4YKQMCVADLK7NC67DCZ3JCW7DE5Q7CKYIT2JKC6BI653YCYAIKK3EHJNCLSIZ" class="ad0 odd " title="Responsive HTML5/CSS3" id="bsa_7360151" target="_blank" rel="nofollow">
+<img src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/7360151-1490028339.jpg" width="300" height="250" alt=""></a>
+<script type="text/javascript" id="auto_1" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+    <!-- End BuySellAds.com Zone Code -->
+    <div class="clr"></div>
+  </div>
+  
+  
+  
+    
+  
+  
+  
+    <div class="sb-posts-title">Latest posts</div>
+ <div class="sb-posts">
+           
+           
+                         
+            <div class="sb-post">
+            
+             
+        
+                 
+                   
+           <a class="sb-cat" href="http://www.developerdrive.com/category/wordpress/">WordPress</a>
+          
+                
+        
+        <h2 class="sb-post-title">
+          <a href="http://www.developerdrive.com/2018/06/how-to-fix-error-establishing-a-database-connection-in-wordpress/">
+            How to Fix Error Establishing a Database Connection in WordPress          </a>
+        </h2>
+            
+            </div>
+                        
+            <div class="sb-post">
+            
+             
+        
+                 
+                   
+           <a class="sb-cat" href="http://www.developerdrive.com/category/tools/">Tools</a>
+          
+                
+        
+        <h2 class="sb-post-title">
+          <a href="http://www.developerdrive.com/2018/06/20-best-tools-for-react-development/">
+            20 Best Tools for React Development          </a>
+        </h2>
+            
+            </div>
+                        
+            <div class="sb-post">
+            
+             
+        
+                 
+                   
+           <a class="sb-cat" href="http://www.developerdrive.com/category/java/">Java</a>
+          
+                
+        
+        <h2 class="sb-post-title">
+          <a href="http://www.developerdrive.com/2018/05/how-to-initialize-a-java-array/">
+            How to Initialize a Java Array          </a>
+        </h2>
+            
+            </div>
+                        
+            <div class="sb-post">
+            
+             
+        
+                 
+                   
+           <a class="sb-cat" href="http://www.developerdrive.com/category/uncategorized/">Uncategorized</a>
+          
+                
+        
+        <h2 class="sb-post-title">
+          <a href="http://www.developerdrive.com/2018/05/how-to-build-better-contact-forms/">
+            How to Build Better Contact Forms          </a>
+        </h2>
+            
+            </div>
+                        
+            <div class="sb-post">
+            
+             
+        
+                 
+                   
+           <a class="sb-cat" href="http://www.developerdrive.com/category/css/">CSS</a>
+          
+                
+        
+        <h2 class="sb-post-title">
+          <a href="http://www.developerdrive.com/2018/05/10-best-sass-mixins-for-web-developers/">
+            10 Best Sass Mixins for Web Developers          </a>
+        </h2>
+            
+            </div>
+                        
+            <div class="sb-post">
+            
+             
+        
+                 
+                   
+           <a class="sb-cat" href="http://www.developerdrive.com/category/wordpress/">WordPress</a>
+          
+                
+        
+        <h2 class="sb-post-title">
+          <a href="http://www.developerdrive.com/2018/05/how-to-add-custom-css-to-your-wordpress-website/">
+            How to Add Custom CSS to Your WordPress Website (4 Methods Explored)          </a>
+        </h2>
+            
+            </div>
+                      
+</div>  
+    
+      
+      
+    
+   
+      
+   
+<div id="pre-sb-sky-ads"></div>
+<div id="sb-sky-ads" class="fixed" style="margin-top: 0px;"> 
+  
+    
+  
+  <div style="margin:0px auto 0;">
+  <!-- BuySellAds Zone Code -->
+<div id="bsap_1306397" class="bsap bsap_1306397" data-serve="CVAIC2JW">
+<style type="text/css">
+div.bsap_1306397{width:100%;display:block;}div.bsap_1306397 a{width:300px;}div.bsap_1306397 a img{padding:0;}div.bsap_1306397 a em{font-style:normal;}div.bsap_1306397 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}
+div.bsap_1306397 img{border:0;clear:right;}
+div.bsap_1306397 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}
+div.bsap_1306397 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}
+div.bsap_1306397 iframe{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}div.bsap_1306397 a{line-height:100%;}div.bsap_1306397 a.adhere{width:300px;height:150px;line-height:1200%;}html>body div.bsap_1306397 a.adhere{width:298px;height:148px;}div.bsap_1306397 img.s{height:0;width:0;}
+</style>
+<!-- no ad --><!-- no ad --><!-- no ad -->
+<script type="text/javascript" id="auto_2" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+<!-- End BuySellAds Zone Code -->
+<div class="clr"></div>
+  </div>
+    
+  <div style="margin:0px auto 0;">
+ 
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6570377960606544";
+/* DeveloperDrive - Wide Skyscraper */
+google_ad_slot = "2108450295";
+google_ad_width = 300;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/f(8).txt"></script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:300px;height:600px;" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/saved_resource(5).html"></iframe></ins></ins>
+
+   </div> 
+   
+       
+ </div>
+ 
+ <div id="sb-sky-ads-stub"></div>
+ 
+ <div class="clr"></div>
+ 
+ 
+  
+ 
+   
+
+</div>
+    
+    <div class="ft-clr clr"></div>
+            
+          
+    
+    <div class="yarpp-related">
+
+
+
+
+  <div class="clr"></div>        
+   <div class="posts-list related-list">  
+	  
+
+   
+			 
+  
+    
+    <article id="post-6041" class="hp-post  hp-post-1">
+    
+     <div class="hp-post-parts frame-box animation-card">
+     
+               <a href="http://www.developerdrive.com/2017/09/how-to-create-a-child-theme-in-wordpress-and-why-you-should/" class="hp-pp-over-lnk"></a>
+      <div class="hp-post-part hppp-clr hppp-title-block ">
+        
+        
+        <div class="hppp-category">
+                 
+                   
+           <a href="http://www.developerdrive.com/category/wordpress/">WordPress</a>
+          
+                </div>
+        
+        <h2 class="hp-post-title">
+          <a href="http://www.developerdrive.com/2017/09/how-to-create-a-child-theme-in-wordpress-and-why-you-should/">
+            How to Create a Child Theme in WordPress (And Why You Should)          </a>
+        </h2>
+        
+        <div class="hppp-author">
+            <a class="post-author-av" href="http://www.developerdrive.com/author/Rafay-Ansari">
+    <img alt="" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/6b4de636fb79c9b6f5194341a2628bd5.jpeg" srcset="http://0.gravatar.com/avatar/6b4de636fb79c9b6f5194341a2628bd5?s=216&amp;d=mm&amp;r=g 2x" class="avatar avatar-108 photo" height="108" width="108">    </a><span class="hppp-auth-lb">By <a class="post-author" href="http://www.developerdrive.com/author/Rafay-Ansari">Rafay Ansari</a></span>        </div>
+        
+      </div>
+      
+      <div class="hp-post-part hppp-text-block">
+        <div class="hppp-text">
+         As a WordPress website owner you’ve likely thought of tweaking your theme to make it appear to be unique, to add some custom functionality to it, or simply to try out different calls to action. Fortunately, there is an easy way to modify your theme’s design and functionality without worrying about losing your customizations: child themes. They allow you to preserve theme modifications and can even speed up your next WordPress development project. With this in mind, in this post, we’ll talk about...        </div>
+              </div>
+     
+      <svg class="marrow-svg" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path class="marrow-path" d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg>     </div> 
+  
+	</article>
+ 
+ 
+    
+      	
+	  
+
+   
+			 
+  
+    
+    <article id="post-6001" class="hp-post  hp-post-2">
+    
+     <div class="hp-post-parts frame-box animation-card">
+     
+               <a href="http://www.developerdrive.com/2017/09/how-to-build-your-own-theme-for-grav-cms/" class="hp-pp-over-lnk"></a>
+      <div class="hp-post-part hppp-clr hppp-title-block ">
+        
+        
+        <div class="hppp-category">
+                 
+                   
+           <a href="http://www.developerdrive.com/category/web-development-2/">Web Development</a>
+          
+                </div>
+        
+        <h2 class="hp-post-title">
+          <a href="http://www.developerdrive.com/2017/09/how-to-build-your-own-theme-for-grav-cms/">
+            How to build your own theme for Grav CMS          </a>
+        </h2>
+        
+        <div class="hppp-author">
+            <a class="post-author-av" href="http://www.developerdrive.com/author/Angie-Vella">
+    <img alt="" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/none(1).png" srcset="http://1.gravatar.com/avatar/?s=216&amp;d=mm&amp;r=g 2x" class="avatar avatar-108 photo avatar-default" height="108" width="108">    </a><span class="hppp-auth-lb">By <a class="post-author" href="http://www.developerdrive.com/author/Angie-Vella">Angie Vella</a></span>        </div>
+        
+      </div>
+      
+      <div class="hp-post-part hppp-text-block">
+        <div class="hppp-text">
+         Grav is an open source flat-file CMS platform, built by the RocketTheme Team. While there are plenty of great CMS platforms available, they are all mostly database-driven, which can be overkill for smaller websites. Instead of a database, Grav uses folders and a basic file structure, it is focused on speed, simplicity, and flexibility. After reading all of the documentation and spending some time trying Grav out, I’m definitely sold and will be using the platform. I hope you will too. What We’ll...        </div>
+              </div>
+     
+      <svg class="marrow-svg" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path class="marrow-path" d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg>     </div> 
+  
+	</article>
+ 
+ 
+    
+      	
+	  
+
+   
+			 
+  
+    
+    <article id="post-4553" class="hp-post  hp-post-3">
+    
+     <div class="hp-post-parts frame-box animation-card">
+     
+               <a href="http://www.developerdrive.com/2013/09/how-to-create-a-child-theme-for-wordpress/" class="hp-pp-over-lnk"></a>
+      <div class="hp-post-part hppp-clr hppp-title-block ">
+        
+        
+        <div class="hppp-category">
+                 
+                   
+           <a href="http://www.developerdrive.com/category/wordpress/">WordPress</a>
+          
+                </div>
+        
+        <h2 class="hp-post-title">
+          <a href="http://www.developerdrive.com/2013/09/how-to-create-a-child-theme-for-wordpress/">
+            How to create a child theme for WordPress          </a>
+        </h2>
+        
+        <div class="hppp-author">
+            <span class="hppp-auth-lb" style="font-size: 14px;">By <a href="http://www.developerdrive.com/author/DeveloperDrive-Staff">DeveloperDrive Staff</a></span>
+        </div>
+        
+      </div>
+      
+      <div class="hp-post-part hppp-text-block">
+        <div class="hppp-text">
+         Sometimes, you come to a point with a WordPress website where you just want something new and different to better fit the design needs of your site. The way to do that in WordPress is by building a child theme. The reason you need a child theme is that updates may cause changes to be overwritten. That means that the theme will go back to default and all your work may be lost. In order to prevent that, you build a child theme. Getting started with WordPress child themes ... For this tutorial, we are creating a child...        </div>
+              </div>
+     
+      <svg class="marrow-svg" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path class="marrow-path" d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg>     </div> 
+  
+	</article>
+ 
+ 
+    
+      	
+	  
+
+   
+			 
+  
+    
+    <article id="post-5836" class="hp-post  hp-post-4">
+    
+     <div class="hp-post-parts frame-box animation-card">
+     
+               <a href="http://www.developerdrive.com/2017/01/how-to-use-font-awesome-icon-fonts-in-wordpress/" class="hp-pp-over-lnk"></a>
+      <div class="hp-post-part hppp-clr hppp-title-block ">
+        
+        
+        <div class="hppp-category">
+                 
+                   
+           <a href="http://www.developerdrive.com/category/wordpress/">WordPress</a>
+          
+                </div>
+        
+        <h2 class="hp-post-title">
+          <a href="http://www.developerdrive.com/2017/01/how-to-use-font-awesome-icon-fonts-in-wordpress/">
+            How to use Font Awesome icon fonts in WordPress          </a>
+        </h2>
+        
+        <div class="hppp-author">
+            <a class="post-author-av" href="http://www.developerdrive.com/author/Tahir-Taous">
+    <img alt="" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/none(1).png" srcset="http://2.gravatar.com/avatar/?s=216&amp;d=mm&amp;r=g 2x" class="avatar avatar-108 photo avatar-default" height="108" width="108">    </a><span class="hppp-auth-lb">By <a class="post-author" href="http://www.developerdrive.com/author/Tahir-Taous">Tahir Taous</a></span>        </div>
+        
+      </div>
+      
+      <div class="hp-post-part hppp-text-block">
+        <div class="hppp-text">
+         I realize that some of you reading this tutorial may have never used an icon font before. You may even be asking yourself, what exactly is an icon font? Icon fonts are simply another way of displaying icons on your websites. In the past, it was a common practice to use images as icons. But using images for icons usually results in additional requests to the server. So to address this problem, designers have turned to icon fonts. An icon font is exactly like a normal font. The only difference is, instead of a...        </div>
+              </div>
+     
+      <svg class="marrow-svg" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path class="marrow-path" d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg>     </div> 
+  
+	</article>
+ 
+ 
+    
+      	
+	  
+
+   
+			 
+  
+    
+    <article id="post-6290" class="hp-post  hp-post-5">
+    
+     <div class="hp-post-parts frame-box animation-card">
+     
+               <a href="http://www.developerdrive.com/2017/12/your-indispensable-guide-to-wordpress-theme-frameworks/" class="hp-pp-over-lnk"></a>
+      <div class="hp-post-part hppp-clr hppp-title-block ">
+        
+        
+        <div class="hppp-category">
+                 
+                   
+           <a href="http://www.developerdrive.com/category/wordpress/">WordPress</a>
+          
+                </div>
+        
+        <h2 class="hp-post-title">
+          <a href="http://www.developerdrive.com/2017/12/your-indispensable-guide-to-wordpress-theme-frameworks/">
+            Your Indispensable Guide to WordPress Theme Frameworks          </a>
+        </h2>
+        
+        <div class="hppp-author">
+            <a class="post-author-av" href="http://www.developerdrive.com/author/Rafay-Ansari">
+    <img alt="" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/6b4de636fb79c9b6f5194341a2628bd5.jpeg" srcset="http://0.gravatar.com/avatar/6b4de636fb79c9b6f5194341a2628bd5?s=216&amp;d=mm&amp;r=g 2x" class="avatar avatar-108 photo" height="108" width="108">    </a><span class="hppp-auth-lb">By <a class="post-author" href="http://www.developerdrive.com/author/Rafay-Ansari">Rafay Ansari</a></span>        </div>
+        
+      </div>
+      
+      <div class="hp-post-part hppp-text-block">
+        <div class="hppp-text">
+         As a WordPress developer, you’re always looking for ways to speed up your development workflow while making sure you don’t compromise on quality. And one way to make sure you’re delivering your best work is by using a theme framework. WordPress theme frameworks give you the core feature set you need to build powerful, functional websites and the freedom to design it however you see fit without risking losing modifications every time the theme updates. In this post, we’ll cover everything...        </div>
+              </div>
+     
+      <svg class="marrow-svg" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path class="marrow-path" d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg>     </div> 
+  
+	</article>
+ 
+ 
+    
+      	
+	  
+
+   
+			 
+  
+    
+    <article id="post-5986" class="hp-post  hp-post-6">
+    
+     <div class="hp-post-parts frame-box animation-card">
+     
+               <a href="http://www.developerdrive.com/2017/07/turn-your-website-into-a-conversion-machine-with-wordpress-plugins/" class="hp-pp-over-lnk"></a>
+      <div class="hp-post-part hppp-clr hppp-title-block ">
+        
+        
+        <div class="hppp-category">
+                 
+                   
+           <a href="http://www.developerdrive.com/category/wordpress/">WordPress</a>
+          
+                </div>
+        
+        <h2 class="hp-post-title">
+          <a href="http://www.developerdrive.com/2017/07/turn-your-website-into-a-conversion-machine-with-wordpress-plugins/">
+            Turn Your Website into a Conversion Machine with WordPress Plugins          </a>
+        </h2>
+        
+        <div class="hppp-author">
+            <a class="post-author-av" href="http://www.developerdrive.com/author/Maddy-Osman">
+    <img alt="" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/ec0a6ac9bd172932148a187240330fd8.jpeg" srcset="http://2.gravatar.com/avatar/ec0a6ac9bd172932148a187240330fd8?s=216&amp;d=mm&amp;r=g 2x" class="avatar avatar-108 photo" height="108" width="108">    </a><span class="hppp-auth-lb">By <a class="post-author" href="http://www.developerdrive.com/author/Maddy-Osman">Maddy Osman</a></span>        </div>
+        
+      </div>
+      
+      <div class="hp-post-part hppp-text-block">
+        <div class="hppp-text">
+         There’s a goal behind every website, and a specific chain of events that must occur before each goal is accomplished. Whether you want someone to sign up for your email newsletter, or fill out a contact form, these things don’t happen without the proper triggers. Used strategically, WordPress plugins can assist with the realization of important goals. Here’s how to turn your website into a conversion machine with WordPress Plugins. Essential Grid ... Essential Grid is an all-around grid solution...        </div>
+              </div>
+     
+      <svg class="marrow-svg" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path class="marrow-path" d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg>     </div> 
+  
+	</article>
+ 
+ 
+    
+      	
+	  
+
+   
+			 
+  
+    
+    <article id="post-5450" class="hp-post  hp-post-7">
+    
+     <div class="hp-post-parts frame-box animation-card">
+     
+               <a href="http://www.developerdrive.com/2015/02/in-the-search-of-perfect-wordpress-theme-what-to-look-for-and-what-to-avoid/" class="hp-pp-over-lnk"></a>
+      <div class="hp-post-part hppp-clr hppp-title-block ">
+        
+        
+        <div class="hppp-category">
+                 
+                   
+           <a href="http://www.developerdrive.com/category/wordpress/">WordPress</a>
+          
+                </div>
+        
+        <h2 class="hp-post-title">
+          <a href="http://www.developerdrive.com/2015/02/in-the-search-of-perfect-wordpress-theme-what-to-look-for-and-what-to-avoid/">
+            In the search of perfect WordPress theme: what to look for and what to avoid          </a>
+        </h2>
+        
+        <div class="hppp-author">
+            <a class="post-author-av" href="http://www.developerdrive.com/author/Anna-Ladoshkina">
+    <img alt="" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/a8d9c2fa9812899a2ecfc6b70339c6b1.jpeg" srcset="http://1.gravatar.com/avatar/a8d9c2fa9812899a2ecfc6b70339c6b1?s=216&amp;d=mm&amp;r=g 2x" class="avatar avatar-108 photo" height="108" width="108">    </a><span class="hppp-auth-lb" style="font-size: 17px;">By <a class="post-author" href="http://www.developerdrive.com/author/Anna-Ladoshkina">Anna Ladoshkina</a></span>        </div>
+        
+      </div>
+      
+      <div class="hp-post-part hppp-text-block">
+        <div class="hppp-text">
+         The WordPress theme market nowadays could undoubtedly be described as huge. There are tons of offers and new options appear every day. Rarely has a week gone by without any “WordPress theme reviews” in my news feed. But when it comes to the selection of a theme for a specific project, such diversity provides more pain than one might expect. Usually, we just try to find a good looking theme that suits the aesthetic of our project, and has some set of customization options. The problem here is that WordPress...        </div>
+              </div>
+     
+      <svg class="marrow-svg" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path class="marrow-path" d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg>     </div> 
+  
+	</article>
+ 
+ 
+    
+      	
+	  
+
+   
+			 
+  
+    
+    <article id="post-6049" class="hp-post  hp-post-8">
+    
+     <div class="hp-post-parts frame-box animation-card">
+     
+               <a href="http://www.developerdrive.com/2017/10/how-to-speed-up-wordpress-development-and-maintenance-with-wp-cli/" class="hp-pp-over-lnk"></a>
+      <div class="hp-post-part hppp-clr hppp-title-block ">
+        
+        
+        <div class="hppp-category">
+                 
+                   
+           <a href="http://www.developerdrive.com/category/wordpress/">WordPress</a>
+          
+                </div>
+        
+        <h2 class="hp-post-title">
+          <a href="http://www.developerdrive.com/2017/10/how-to-speed-up-wordpress-development-and-maintenance-with-wp-cli/">
+            How to Speed Up WordPress Development and Maintenance With WP-CLI          </a>
+        </h2>
+        
+        <div class="hppp-author">
+            <a class="post-author-av" href="http://www.developerdrive.com/author/Rafay-Ansari">
+    <img alt="" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/6b4de636fb79c9b6f5194341a2628bd5.jpeg" srcset="http://0.gravatar.com/avatar/6b4de636fb79c9b6f5194341a2628bd5?s=216&amp;d=mm&amp;r=g 2x" class="avatar avatar-108 photo" height="108" width="108">    </a><span class="hppp-auth-lb">By <a class="post-author" href="http://www.developerdrive.com/author/Rafay-Ansari">Rafay Ansari</a></span>        </div>
+        
+      </div>
+      
+      <div class="hp-post-part hppp-text-block">
+        <div class="hppp-text">
+         As a WordPress developer, you’ve probably installed the WordPress CMS, updated it, and activated themes and plugins hundreds of times. And although these routine development and maintenance tasks are fairly easy to do with WordPress’ graphical user interface, doing them over and over again isn’t very efficient. The good news is that you can easily and effectively speed up WordPress development and maintenance with the WordPress Command Line Interface (WP-CLI). With this in mind, in this...        </div>
+              </div>
+     
+      <svg class="marrow-svg" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path class="marrow-path" d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path><path d="M0-.25h48v48h-48z" fill="none"></path></svg>     </div> 
+  
+	</article>
+ 
+ 
+    
+      	
+	  </div>
+</div>
+     
+          
+     <div id="bottom-ads">
+        <script type="text/javascript"><!--
+google_ad_client = "ca-pub-6570377960606544";
+/* DeveloperDrive - Leaderboard Top */
+google_ad_slot = "2391343714";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/f(8).txt">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;width:728px;height:90px;" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/saved_resource(6).html"></iframe></ins></ins>
+    </div>
+     
+          
+     <div id="pre-bottom-clr" class="clr"></div>
+	  
+    
+   
+
+
+
+
+   
+
+      
+   
+
+ </div><!-- #main-lock -->
+ 
+ </div> <!-- global-wrap -->
+ 
+ <div id="footer-wrap">
+   <footer class="w-block">
+   
+     <div id="footer-blocks">
+		 
+		 <div id="footer-about" class="footer-block">
+		   <div class="footer-block-title">About</div>
+		   <div class="footer-block-content">
+			 DeveloperDrive.com is a blog about web development from the makers of the popular web design blog WebdesignerDepot.com
+			 Founded in 2011, we focus on the latest trends, tutorials, opinion articles as well as tips and tricks to empower our readers to become better web developers.
+		   </div>
+		 </div>
+		 
+		 <div id="footer-nav" class="footer-block">
+		   <div class="footer-block-title">Navigation</div>
+		   <div class="footer-block-content">
+			 <div id="footer-menu-items">
+				<div><a href="http://www.developerdrive.com/">Home</a></div>
+				<div><a href="http://www.developerdrive.com/about">About</a></div>
+				<div><a href="http://buysellads.com/buy/detail/85382">Advertise</a></div>
+				<div><a href="https://www.facebook.com/developerdrive">Facebook</a></div>
+				<div><a href="https://www.twitter.com/developerdrive">Twitter</a></div>
+				<div><a href="http://feeds.feedburner.com/DeveloperDrive?format=html">RSS</a></div>
+				<div><a href="http://www.developerdrive.com/legal">Privacy Policy</a></div>
+				<div><a href="http://www.developerdrive.com/contact">Contact</a></div>
+				   </div>
+		   </div>
+		 </div>
+		 
+		 <div id="footer-social" class="footer-block">
+		   <div class="footer-block-title">Follow us:</div>
+		   <div class="footer-block-content">
+			   <p>
+			   Subscribe to our RSS feed or follow us on Facebook and Twitter for the latest content
+			   </p>
+		   
+		   
+		   
+			   <a href="https://www.twitter.com/developerdrive" class="icon-twitter scft-icon-in scft-icon-tw external" rel="nofollow"></a>
+			   <a href="https://www.facebook.com/developerdrive" class="icon-facebook scft-icon-in scft-icon-fb external" rel="nofollow"></a>
+					   <a href="http://www.developerdrive.com/rss" class="icon-rss scft-icon-in scft-icon-rss  external" rel="nofollow"></a>
+		   </div>
+		 </div>
+		 
+		 		
+		<div id="footer-newsletter" class="footer-block">
+
+			<div class="footer-block-title">Newsletter</div>
+
+			<div class="footer-block-content" id="footer-newsletter-block">
+
+				<p>Get our free newsletter for the latest web development news, articles and tutorials.</p>
+
+			  	<div class="email-octopus-form-wrapper">
+
+					<p class="email-octopus-success-message"></p>
+					<p class="email-octopus-error-message"></p>
+
+					<form method="post" action="https://emailoctopus.com/lists/649f497d-4090-11e8-a3c9-06b79b628af2/members/embedded/1.1/add" class="email-octopus-form bound">
+						  
+						<div class="email-octopus-form-row ft-sb-email-wrap">
+							<input class="email-octopus-email-input" id="field_0" name="embedded_form_subscription[field_0]" type="email" placeholder="Enter email address">
+						</div>
+
+						<div class="email-octopus-form-row-hp" aria-hidden="true">
+							<!-- Do not remove this field, otherwise you risk bot sign-ups -->
+							<input type="text" name="hp649f497d-4090-11e8-a3c9-06b79b628af2" tabindex="-1" autocomplete="nope">
+						</div>
+
+						<div class="email-octopus-form-row-subscribe ft-sb-btn-wrap">
+							<input type="hidden" name="successRedirectUrl" value="">
+							<button type="submit" class="email-octopus-submit">Subscribe</button>
+						</div>
+
+                        <div style="clear:both;padding-top: 10px; text-align: left;">
+                            <input type="checkbox" required="" style="display: inline-block; width: auto;"> I agree to have my personal information transfered to EmailOctopus ( <a href="https://emailoctopus.com/legal/privacy" target="_blank" style="color: inherit; text-decoration: underline;">more information</a> )
+                        </div>
+
+					</form>
+
+			  </div>
+
+			</div><!-- .footer-block-content -->
+
+			<script src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/formEmbed.js.download"></script> 
+		   
+		</div>
+
+	  </div>
+
+   
+          
+     
+     <div id="footer-copyright">
+       © 2011-2018 All Rights Reserved
+     </div>
+     
+     
+     
+   
+     
+   
+   </footer>
+   
+      
+   <!--<a href="#header-wrap" id="top_link" ></a>-->
+   
+ </div>
+ 
+ <div id="body-end"></div>
+ 
+
+   
+  <div class="clr"></div>
+  
+ 
+
+
+<div id="m-side-menu">
+ <a href="http://www.developerdrive.com/">Home</a>
+
+          	         <a href="http://www.developerdrive.com/category/css/">CSS</a>
+          	         <a href="http://www.developerdrive.com/category/deals/">Deals</a>
+          	         <a href="http://www.developerdrive.com/category/html/">HTML</a>
+          	         <a href="http://www.developerdrive.com/category/html5/">HTML5</a>
+          	         <a href="http://www.developerdrive.com/category/java/">Java</a>
+          	         <a href="http://www.developerdrive.com/category/javascript/">JavaScript</a>
+          	         <a href="http://www.developerdrive.com/category/jquery-2/">jQuery</a>
+          	         <a href="http://www.developerdrive.com/category/miscellaneous/">Miscellaneous</a>
+          	         <a href="http://www.developerdrive.com/category/mobile/">Mobile</a>
+          	         <a href="http://www.developerdrive.com/category/mysql/">MySQL</a>
+          	         <a href="http://www.developerdrive.com/category/news/">News</a>
+          	         <a href="http://www.developerdrive.com/category/php/">PHP</a>
+          	         <a href="http://www.developerdrive.com/category/resources/">Resources</a>
+          	         <a href="http://www.developerdrive.com/category/security-2/">Security</a>
+          	         <a href="http://www.developerdrive.com/category/snippet-2/">Snippet</a>
+          	         <a href="http://www.developerdrive.com/category/tools/">Tools</a>
+          	         <a href="http://www.developerdrive.com/category/tutorial-2/">Tutorial</a>
+          	         <a href="http://www.developerdrive.com/category/web-development-2/">Web Development</a>
+          	         <a href="http://www.developerdrive.com/category/web-services/">Web Services</a>
+          	         <a href="http://www.developerdrive.com/category/wordpress/">WordPress</a>
+                    </div>
+
+  
+  
+ <div id="oip">
+   <div id="oip-content">
+     <div id="oip-text">
+     </div>
+     <a href="http://www.developerdrive.com/2012/06/allowing-users-to-edit-text-content-with-html5/#" class="icon-cancel-1" id="oip-close"></a>
+   </div>
+ </div>
+
+<link rel="stylesheet" id="yarppRelatedCss-css" href="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/related.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"developerdrive"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/comment_count.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var embedVars = {"disqusConfig":{"integration":"wordpress 3.0.16"},"disqusIdentifier":"1917 http:\/\/www.developerdrive.com\/?p=1917","disqusShortname":"developerdrive","disqusTitle":"Allowing Users to Edit Text Content with HTML5","disqusUrl":"http:\/\/www.developerdrive.com\/2012\/06\/allowing-users-to-edit-text-content-with-html5\/","postId":"1917"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/comment_embed.js.download"></script>
+<script type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/wp-embed.min.js.download"></script>
+  
+
+<script type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/widgets.js.download"></script>
+<script src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/all.js.download"></script>
+
+
+<script type="text/javascript" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/main.js.download"></script>
+
+
+
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="http://www.developerdrive.com/wp-content/themes/dd_v/js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="http://www.developerdrive.com/wp-content/themes/dd_v/js/html5.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="http://www.developerdrive.com/wp-content/themes/dd_v/css/ie.css" />
+<![endif]-->
+
+<script src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/monetization.js.download" type="text/javascript"></script>
+<script>
+(function(){
+	if(typeof _bsa !== 'undefined' && _bsa) {
+  		// format, zoneKey, segment:value, options
+  		_bsa.init('flexbar', 'CKYIT2QY', 'placement:developerdrivecom');
+  	}
+})();
+</script>
+
+
+
+
+<div id="AutocompleteContainter_3ef32" style="position: absolute; z-index: 9999; top: 65px; left: 1024.5px;"><div class="autocomplete-w1"><div class="autocomplete" id="Autocomplete_3ef32" style="display: none; width: 250px; max-height: 300px;"></div></div></div><div id="AutocompleteContainter_7f9b3" style="position: absolute; z-index: 9999; top: 0px; left: 0px;"><div class="autocomplete-w1 fixed-autocomplete"><div class="autocomplete" id="Autocomplete_7f9b3" style="display: none; width: 250px; max-height: 300px;"></div></div></div><iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/widget_iframe.ed3aa96ee3d5c426af8aa717469ea983.html" title="Twitter settings iframe" style="display: none;"></iframe><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/mAiQUwlReIP.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/mAiQUwlReIP(1).html" style="border: none;"></iframe></div></div></div><iframe style="display: none;" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/saved_resource(7).html"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/saved_resource(8).html"></iframe><iframe id="google_osd_static_frame_5871503054049" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./Allowing Users to Edit Text Content with HTML5 - Developer Drive_files/saved_resource(9).html"></iframe></body></html>
