@@ -22,29 +22,45 @@ router.get('/', function(req, res, next) {
 	}); 
 });
 router.post('/', function(req, res, next) {
-	var mydata=req.body;
+		var mydata=req.body;
+if(mydata.state=="amc")
+{
+		var sql="select * from serial_number_table where ebid = "+mydata.ebid;
+	con.query(sql, function(err,result1){
+		 if(err){res.end('error');}
+        else{
+var sql="select * from proposal_table where idproposal_table = "+mydata.pid;
+	con.query(sql, function(err,result){
+		 if(err){res.end('error');}
+        else{ res.render('create',{title:'AMC',data:result,data1:result1});	} 
+	}); 
 
-	var data2=req.files;
-	console.log(mydata,data2);
-	console.log();
-	var file = req.files.mypdf;
-	file.mv('uploads/'+file.name, function(err){
-		if(err) throw err;
-		else {console.log("lo ho gaya..............");
-		               var dateTime = require('node-datetime');
-var dt = dateTime.create();
-//var formatted = dt.format('Y-m-d H:M:S');
-var formatted = dt.format('Y-m-d');
-		mydata.dop=formatted;
-	mydata.comment=req.files.mypdf.name;
-	con.query("insert into proposal_table set ?",mydata,function(err,result){
- 		 if(err){console.log(err);
- 		 	res.end('error');}
-         else{ res.write('amc');
-         res.end();	} 
- 	}); }
+        } 
+	}); 
 
-	});
+
+
+	
+
+}
+else
+{
+	var sql="update proposal_table set state = '"+mydata.state+"' where idproposal_table = "+mydata.pid;
+	con.query(sql, function(err,result){
+		 if(err){res.end('error');}
+        else{ 
+        		var sql="select * from proposal_table where state in ('final','proposed')";
+	con.query(sql, function(err,result){
+		 if(err){res.end('error');}
+        else{ res.render('service',{title:'service',data:result});	} 
+	}); 
+
+        		} 
+	}); 
+
+}
+
+
 
         
       });

@@ -1,4 +1,5 @@
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
         $("#btnPrint").live("click", function () {
             var divContents = $("#dvContainer").html();
@@ -10,10 +11,9 @@
             printWindow.document.close();
             printWindow.print();
         });
+
+
     </script>
-
-
-
 
 <style>
 @media print {
@@ -31,36 +31,50 @@
 }
 </style>
 <% include header %>
-   
 
+<div id="editor"></div>
+<button id="cmd">generate PDF</button>
+<script>
+        var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
 
+$('#cmd').click(function () {
+    doc.fromHTML($('#dvContainer').html(), 15, 15, {
+        'width': 170,
+            'elementHandlers': specialElementHandlers
+    });
+    doc.save('sampleAmc.pdf');
+});</script>
 
+<br>
 
-<div id="dvContainer" style="background:blue;float:right;height:400px;width:50%;color:white">
-<p>Proposal</p>  <p>Company Name:</p>  <p>  Location Name:</p>  <p>  ALL Equipment list in AMC:</p>
+<div id="dvContainer" style="background:blue;float:right;height:400px;width:50%;color:white;display:none">
+<p>AMC</p>  <p>Company Name:</p>  <p>  Location Name:</p>  <p> ALL Equipment list in AMC:</p>
 <table id="PreviewTable" border="1"><tr><td>Equipment Name</td><td>Serial Numbers</td><td>Total Equipment Name</td><td>Result</td></tr></table>
 <p>Total</p>
 </div>
-
-
-
-
+ <embed src="uploads/interface.pdf" width="600" height="500" alt="pdf" style="float:right;" >
+ 
 <INPUT type="button" class="but" value="Add " onclick="addRow('dataTable')" />
 <INPUT type="button" class="but" value="Delete " onclick="deleteRow('dataTable')" />
-<TABLE id="dataTable" border="1">	
+<TABLE id="dataTable" border="1"></TABLE>
 
-	</TABLE>
-
-<input type="button"  value="preview" onclick="preview();" >
+<input type="button" value="preview" onclick="preview();" >
 <input type="button" value="Print" id="btnPrint" />
-<form method="post" action="/amc"  enctype="multipart/form-data" >
-<input type="file" name="mypdf" accept="application/pdf" />
-<input type="hidden" name="locid" value="51"  />
-<input type="hidden" name="ebid" value="4"  />
-<input type="submit" value="Save pdf on server" id="" />
-</form>
-<a class="email" title="Email a friend" href="#" onclick="javascript:window.location='mailto:xyz@abc.com?subject=Proposal For AMC&body=We think you might find this information interesting: ' + window.location;">Email</a>
 
+<a class="email" title="Email to client " href="#" onclick="javascript:window.location='mailto:xyz@abc.com?subject=AMC&body=AMC: ' + window.location;attachments=[{
+    filename: 'file.pdf',
+    path: 'C:/Users/Username/HP/link.pdf',
+    contentType: 'application/pdf'
+  }]">Email</a>
+
+<form>
+<input type="submit" value="save">
+</form>
 
 <script>
 
@@ -135,16 +149,16 @@ function addRow(tableID) {
 			select.name = "equip";
 			select.id = "e"+(rowCount-0+1);
 			select.multiple = "True";
-			select.addEventListener("click", function(){
+			select.addEventListener("click",function(){
     total(this);
 });
 			
 			select.className="ro";
-			<% for(var i=0;i<data.length;i++) { %>
+			<% for(var i=0;i<data1.length;i++) { %>
 		
 			option = document.createElement('option');
-            option.value ='<%= data[i].serial_number %>' ;
-            option.text = '<%= data[i].serial_number %>' ;
+            option.value ='<%= data1[i].serial_number %>' ;
+            option.text = '<%= data1[i].serial_number %>' ;
             select.appendChild(option);
 			<% } %>
             cell2.appendChild(select);

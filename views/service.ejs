@@ -12,7 +12,12 @@ ALL proposal on which we can alter state final/fail/default proposed/amc
 <td><%= data[i].locid %> </td>
 <td><%= data[i].state %> </td>
 <td><a><%= data[i].comment %></a> </td>
-<td><select><option>final</option><option>amc</option><option>fail</option><option>proposed</option></select> </td>
+<form method="post">
+<td><input type="hidden" name="pid" value="<%= data[i].idproposal_table %>  ">
+<input type="hidden" name="ebid"
+value="4" valu="<%= data[i].ebid %>  " > </td>
+<td><select name="state"><option>final</option><option>amc</option><option>fail</option><option>proposed</option></select> </td>
+<td><input type="submit" value="save" ></td>
 </tr>
-
+</form>
 <% } %></table>
