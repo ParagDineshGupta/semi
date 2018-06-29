@@ -12,6 +12,7 @@ var searchcust = require('./routes/searchcust');
 // var searchequip = require('./routes/searchequip');
 var searchcomp = require('./routes/searchcomp');
 var makecomp = require('./routes/makecomp');
+var pay = require('./routes/pay');
 var searchequip = require('./routes/searchequip');
 var addequip = require('./routes/addequip');
 var location = require('./routes/location');
@@ -26,6 +27,7 @@ var amc = require('./routes/amc');
 var service = require('./routes/service');
 var app = express();
 app.set('uploads', path.join(__dirname, 'uploads'));
+app.set('assets', path.join(__dirname, 'assets'));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -64,7 +66,9 @@ app.use('/searchcomp', searchcomp);
 app.use('/makecomp', makecomp);
 app.use('/location', location);
 app.use('/searchequip', searchequip);
+app.use('/pay', pay);
 
+function pay(){}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

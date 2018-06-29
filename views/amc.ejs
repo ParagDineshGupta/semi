@@ -11,7 +11,8 @@
             printWindow.print();
         });
     </script>
-
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
 
@@ -53,10 +54,27 @@
 
 <input type="button"  value="preview" onclick="preview();" >
 <input type="button" value="Print" id="btnPrint" />
+<div id="editor"></div>
+<button id="cmd">generate PDF</button>
+<script>
+        var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+
+$('#cmd').click(function () {
+    doc.fromHTML($('#dvContainer').html(), 15, 15, {
+        'width': 170,
+            'elementHandlers': specialElementHandlers
+    });
+    doc.save('sampleProposal.pdf');
+});</script>
 <form method="post" action="/amc"  enctype="multipart/form-data" >
 <input type="file" name="mypdf" accept="application/pdf" />
-<input type="hidden" name="locid" value="51"  />
-<input type="hidden" name="ebid" value="4"  />
+<input type="hidden" name="locid" value="0"  />
+<input type="hidden" name="ebid" value="<%= ebid %>"  />
 <input type="submit" value="Save pdf on server" id="" />
 </form>
 <a class="email" title="Email a friend" href="#" onclick="javascript:window.location='mailto:xyz@abc.com?subject=Proposal For AMC&body=We think you might find this information interesting: ' + window.location;">Email</a>

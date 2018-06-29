@@ -1,0 +1,23 @@
+payment mode:select
+payment:number
+date:date
+installment number:number/select
+previous installment
+total installment
+
+<% include header %>
+
+basic amc detail then
+<form method="post" action="" ><%= data.length  %>
+Total Amount<input type="number" value="<%= data[0].total_payment  %>" readonly >
+Current Deposit<input type="number" value="<%= data[0].deposit_payment  %>" readonly >
+Overdue Amount <input type="number" value="<%= data[0].overdue_payment  %>" readonly >
+<input type="hidden" value="<%= data[0].amcid  %>" name="amcid" >
+ADD NEW PAYMENT:<input type="number" name="new_pay" value="" required>
+Date Of Pay<input type="date" name="date_of_pay" value="" required>
+Installment No.<input type="number" name="installment_number" min="0" required >
+Payment Mode:
+<select name="pay_mode"><option>By cash</option><option>by Cheque</option><option>By net banking</option>
+<option>other</option></select>
+<input type="submit" name="submit" value="Save" >
+</form>

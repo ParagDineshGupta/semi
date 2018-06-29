@@ -1,0 +1,19 @@
+transporter.sendMail({
+  from: 'foo@bar.com'.
+  to: 'bar@foo.com',
+  subject: 'An Attached File',
+  text: 'Check out this attached pdf file',
+  attachments: [{
+    filename: 'file.pdf',
+    path: 'C:/Users/Username/Desktop/somefile.pdf',
+    contentType: 'application/pdf'
+  }], function (err, info) {
+     if(err){
+       console.error(err);
+       res.send(err);
+     }
+     else{
+       console.log(info);
+       res.send(info);
+     }
+  });

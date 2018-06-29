@@ -58,11 +58,19 @@ $('#cmd').click(function () {
 <p>Total</p>
 </div>
  <embed src="uploads/interface.pdf" width="600" height="500" alt="pdf" style="float:right;" >
- 
 <INPUT type="button" class="but" value="Add " onclick="addRow('dataTable')" />
 <INPUT type="button" class="but" value="Delete " onclick="deleteRow('dataTable')" />
-<TABLE id="dataTable" border="1"></TABLE>
+<form method="post" id="amc">
+<INPUT type="hidden" value="<%= data[0].idproposal_table %>amclid" name="amcno" />
+<INPUT type="hidden" value="<%= data[0].idproposal_table %>" name="pid" />
 
+<INPUT type="text" value="" name="amcnumber" placeholder="AMC Number" readonly />
+<INPUT type="number" value="120000" name="totalpayment" placeholder="Total Payment" readonly />
+<INPUT type="number" value="30000" name="corepayment" readonly />
+<INPUT type="number" value="" name="advancepayment" placeholder="Advance Payment" />
+<select name="pay_mode"><option>Anually</option><option>Quaterly</option><option>Monthly</option></select>
+<TABLE id="dataTable" border="1"></TABLE>
+</form>
 <input type="button" value="preview" onclick="preview();" >
 <input type="button" value="Print" id="btnPrint" />
 
@@ -72,9 +80,9 @@ $('#cmd').click(function () {
     contentType: 'application/pdf'
   }]">Email</a>
 
-<form>
-<input type="submit" value="save">
-</form>
+
+<input type="submit" name="submit" value="save" form="amc">
+
 
 <script>
 
@@ -139,14 +147,14 @@ function addRow(tableID) {
 			var cell1 = row.insertCell(0);
 			var element1 = document.createElement("input");
 			element1.type = "checkbox";
-			element1.name="chkbox";
+			element1.name="equip";
 			element1.id =(rowCount-0+1);
 			element1.className="ro";
 			cell1.appendChild(element1);
 
 		    var cell2 = row.insertCell(1);	
 			var select = document.createElement('select');
-			select.name = "equip";
+			select.name = "equipserial";
 			select.id = "e"+(rowCount-0+1);
 			select.multiple = "True";
 			select.addEventListener("click",function(){
@@ -198,6 +206,26 @@ function addRow(tableID) {
 			element4.id = "tepr"+(rowCount-0+1);
 			element4.className="ro";
 			cell4.appendChild(element4);
+
+			var cell5 = row.insertCell(5);
+			var element5 = document.createElement("input");
+			element5.type = "date";
+			element5.placeholder = "Start date";
+			element5.required = "True";
+			element5.name = "startdate";
+			element5.id = "teprs"+(rowCount-0+1);
+			element5.className="ro";
+			cell5.appendChild(element5);
+
+			var cell6 = row.insertCell(6);
+			var element6 = document.createElement("input");
+			element6.type = "date";
+			element6.placeholder = "Expiration date";
+			element6.required = "True";
+			element6.name = "expdate";
+			element6.id = "teprse"+(rowCount-0+1);
+			element6.className="ro";
+			cell6.appendChild(element6);
 		}
 
 		function deleteRow(tableID) {

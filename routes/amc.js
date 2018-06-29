@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 	var sql="select * from serial_number_table where ebid="+ebid;
 	con.query(sql, function(err,result){
 		 if(err){res.end('error');}
-        else{ res.render('amc',{title:'AMC',data:result});	} 
+        else{ res.render('amc',{title:'AMC',data:result,ebid:ebid});	} 
 	}); 
 });
 router.post('/', function(req, res, next) {

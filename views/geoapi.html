@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html>
 <body>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=brick-sign">
+<style>
+.w3-lobster {
+    font-family: "Lobster", Sans-serif;
+    float:left;
+    clear:both;
+}
+</style>
 
+
+<div class="w3-container w3-lobster font-effect-brick-sign">
+  <p class="w3-xxxlarge">Equipshare</p>
+</div>
+<canvas id="canvas" width="150" height="150"
+style="float:right;">Watch
+</canvas>
 <p>Click the button to get your coordinates.</p>
 
 <button onclick="getLocation()">Try It</button>
-
+<div id="map" style="width:100%;height:500px"></div>
 <p id="demo"></p>
 <div id="mapholder"></div><div id="mapholder2"></div>
-<script src="https://maps.google.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU"></script>
+
+<script>
+function myMap() {
+  var indore = new google.maps.LatLng(22.6900242,75.877328);
+
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+    //disableDefaultUI: true,
+     mapTypeControl: true,
+    mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+    center: indore,     
+    zoom:17,
+    mapTypeId:google.maps.MapTypeId.HYBRID};
+  var map = new google.maps.Map(mapCanvas,mapOptions);
+map.setTilt(100);
+  var myCity = new google.maps.Circle({
+    center: indore,
+    radius: 50,
+    strokeColor: "#0000FF",
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: "#0000FF",
+    fillOpacity: 0.4,
+    editable:true
+  });
+  myCity.setMap(map);
+}
+</script>
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+
+
+
+
 <script>
 var x = document.getElementById("demo");
 
@@ -50,10 +99,32 @@ function showPosition(position) {
     mapTypeControl:false,
     navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
     }
+
+//     mapTypeId:ROADMAP (normal, default 2D map)
+// SATELLITE (photographic map)
+// HYBRID (photographic map + roads and city names)
+// TERRAIN (map with mountains, rivers, etc.)
     
     var map2 = new google.maps.Map(document.getElementById("mapholder2"), myOptions);
-    var marker = new google.maps.Marker({position:latlon,map:map2,title:"You are here!"});
+    var marker = new google.maps.Marker({position:latlon,map:map2,title:"You are here!",animation:google.maps.Animation.BOUNCE});
+    
+      // Zoom to 9 when clicking on marker
+       var pos = map2.getZoom();
+  google.maps.event.addListener(marker,'click',function() {
+    map2.setZoom(20);
+    map2.setCenter(marker.getPosition());
+    window.setTimeout(function() {map2.setZoom(pos);},3000);
+  });
+
+ var infowindow = new google.maps.InfoWindow({
+    content: "Hello Indore!"
+  });
+  infowindow.open(map2,marker);
+
+    
 }
+
+
 //To use this code on your website, get a free API key from Google.
 //Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 function showError(error) {
@@ -71,6 +142,92 @@ function showError(error) {
             x.innerHTML = "An unknown error occurred."
             break;
     }
+}
+</script>
+
+
+
+
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
 }
 </script>
 

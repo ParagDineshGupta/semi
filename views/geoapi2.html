@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div style="width: 640px; height: 480px" id="mapContainer"></div>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=brick-sign">
+
+<script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+  type="text/javascript" charset="utf-8"></script>
+<script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+  type="text/javascript" charset="utf-8"></script>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+ <script type="text/javascript">
+ var platform = new H.service.Platform({
+  'app_id': 'KgVcX7q24XiQzft08YzV',
+  'app_code': 'nUPS2CTaS_fJzRoHqMSfhw'
+});
+// Obtain the default map types from the platform object:
+var defaultLayers = platform.createDefaultLayers();
+
+// Instantiate (and display) a map object:
+var map = new H.Map(
+  document.getElementById('mapContainer'),
+  defaultLayers.normal.map,
+  {
+    zoom: 10,
+    center: { lat: 52.5, lng: 13.4 }
+  })
+ </script> 
+<style>
+.w3-lobster {
+    font-family: "Lobster", Sans-serif;
+    float:left;
+    clear:both;
+}
+</style>
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+<div id="map" style="width:100%;height:500px"></div>
+<p id="demo"></p>
+<div id="mapholder"></div><div id="mapholder2"></div>
+
+<script>
+function myMap() {
+  var indore = { lng: 13.4, lat: 52.51 };
+ var maptypes = platform.createDefaultLayers();
+
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+   
+    center: indore,     
+    zoom:17,
+    };
+  var map = new H.Map(mapCanvas,maptypes.normal.map,mapOptions);
+}
+</script>
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap">
+</script>
+
+
+
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(showPosition, showError);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude + 
+    "<br>accuracy: " + position.coords.accuracy+ 
+    "<br>altitude: " + position.coords.altitude+ 
+    "<br>altitudeAccuracy: " + position.coords.altitudeAccuracy+ 
+    "<br>heading: " + position.coords.heading+ 
+    "<br>speed: " + position.coords.speed ;+ 
+    "<br>timestamp: " + position.timestamp ;
+
+       var latlon = position.coords.latitude + "," + position.coords.longitude;
+    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+    +latlon+"&zoom=14&size=400x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
+    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+
+
+
+   var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+    var latlon = new google.maps.LatLng(lat, lon)
+    var mapholder2 = document.getElementById('mapholder2')
+    mapholder2.style.height = '250px';
+    mapholder2.style.width = '500px';
+
+    var myOptions = {
+    center:latlon,zoom:14,
+    mapTypeId:google.maps.MapTypeId.ROADMAP,
+    mapTypeControl:false,
+    navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+    }
+
+//     mapTypeId:ROADMAP (normal, default 2D map)
+// SATELLITE (photographic map)
+// HYBRID (photographic map + roads and city names)
+// TERRAIN (map with mountains, rivers, etc.)
+    
+    var map2 = new google.maps.Map(document.getElementById("mapholder2"), myOptions);
+    var marker = new google.maps.Marker({position:latlon,map:map2,title:"You are here!",animation:google.maps.Animation.BOUNCE});
+    
+      // Zoom to 9 when clicking on marker
+       var pos = map2.getZoom();
+  google.maps.event.addListener(marker,'click',function() {
+    map2.setZoom(20);
+    map2.setCenter(marker.getPosition());
+    window.setTimeout(function() {map2.setZoom(pos);},3000);
+  });
+
+ var infowindow = new google.maps.InfoWindow({
+    content: "Hello Indore!"
+  });
+  infowindow.open(map2,marker);
+
+    
+}
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
