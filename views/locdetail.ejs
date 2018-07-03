@@ -69,7 +69,7 @@ Basic location Details:<%= data[0].lid %><br>
              
                 <td><input type="submit" name="submit" value="SAVE"></td>
             </tr>
-<input type="text" name="eid" id="EID" value="" readonly required>
+<input type="hidden" name="eid" id="EID" value="" readonly required>
 <input type="hidden" name="lid"  value="<%= data[0].lid %>"  required>
         </table>
     </center>
@@ -80,7 +80,7 @@ Basic location Details:<%= data[0].lid %><br>
 <form  method="post" id="viewform2" style="display:none">
                <center id="gctable">
   
-                <textarea rows="4" cols="50" placeholder="write complaint at here then click Enter"></textarea><input type="submit" name="submit" value="Enter" >
+                <textarea rows="4" cols="50" placeholder="write complaint at here then click Enter"></textarea><input type="button" name="submit" value="Enter" >
 <input type="hidden" name="lid"  value="<%= data[0].lid %>"  required>
       
     </center>
@@ -191,17 +191,17 @@ function dataload(nam,val){
 function viewform(){
 document.getElementById('viewform').style.display="inline";
 document.getElementById('viewform2').style.display="none";
-document.getElementById('gc').style.backgroundColor="black";
-document.getElementById('ane').style.backgroundColor="blue";
+document.getElementById('gc').style.backgroundColor="";
+document.getElementById('ane').style.backgroundColor="yellow";
 document.getElementById('ane').disabled="true";
 dataload("EC",""); 
 }
 function viewform2(){
 document.getElementById('viewform2').style.display="inline";
 document.getElementById('viewform').style.display="none";
-document.getElementById('ane').style.backgroundColor="black";
+document.getElementById('ane').style.backgroundColor="";
 document.getElementById('gc').disabled="true";
-document.getElementById('gc').style.backgroundColor="blue";
+document.getElementById('gc').style.backgroundColor="yellow";
 
 }
 

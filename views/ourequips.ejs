@@ -1,0 +1,45 @@
+<% include header %>
+<div class="rdiv">
+<ul><li>
+<a href="addequip">Add New Equipment</a>
+</li>
+</ul>
+</div>
+<%= title %>
+<form  method="post" >
+    <center>
+    <table id="signup"  width="500px" align="center" border="0" cellpadding="4px" cellspacing="8px" id="reg">
+            <tr>
+                <td>Equipment Name</td>
+                <td><input type="text" name="en" autocomplete="off"  required></td>
+                <td><input type="button" name="submit" value="SEARCH"></td>
+            </tr>
+
+        </table>
+    </center>
+
+</form>
+<br>
+<br>
+<br>
+<br>
+<table border="1" id="a">
+<tr>
+<td>S.No.</td>
+<td>EQUIPMENT_CATEGORY</td><td>EQUIPMENT_SUBCATEGORY</td><td>COMPANY</td><td>MODEL</td><td>EQUIPMENT_NAME</td><td>EQUIPMENT_SPECIFICATION</td></tr>
+<% for(var i=0;i<data.length;i++) { %>
+<tr>
+<td><%= i+1 %> </td>
+
+<td><%= data[i].EQUIPMENT_CATEGORY %> </td>
+<td><%= data[i].EQUIPMENT_SUBCATEGORY %> </td>
+<td><%= data[i].COMPANY %> </td>
+<td><%= data[i].MODEL %> </td>
+<td><%= data[i].EQUIPMENT_NAME %> </td>
+<td><%= data[i].EQUIPMENT_SPECIFICATION %> </td>
+
+</tr>
+<% } %>	
+</table>
+
+<% include footer %>

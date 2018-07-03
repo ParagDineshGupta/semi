@@ -1,6 +1,6 @@
 <% include header %>
 <div style="width:29%;height:100%;float:right;background-color: #886b6b;"><h2>Company</h2><%= cdata[0].CUST_NAME %> </div>
-<div style="width:70%;height:10%;background-color: #886b6b;""><h2>Location:</h2><%= ldata[0].location %> </div>
+<div style="width:70%;height:10%;background-color: #886b6b;"><h2>Location:</h2><%= ldata[0].location %> </div>
 <div style="width:70%;height:10%;background-color: #886b6b;"><h2>Equipment:</h2>
 <%= edata[0].EQUIPMENT_NAME %><%= eadata[0].total %> </div>
 <%= title %>
@@ -15,19 +15,18 @@
 <tr><td>Remark</td><td><%= data[0].remark %></td></tr>
 <tr><td>zone jiski jrurt nhi he</td><td><%= data[0].zone %></td></tr>
 <tr><td>supervisor on basis of lid(ebid)</td><td><%= data[0].supervisor %>
-//onclick supervisor get whole detail of sup..
-<select name="supervisor">
+<!-- //onclick supervisor get whole detail of sup.. -->
+<select name="supervisor"  onchange='if(this.value!= 0) { load(this.value); }'>
+
+	<option value="0">Select Supervisor</option>
 <% for(var i=0;i<sdata.length;i++) { %>
-<option><%= sdata[i].sname %></option>
+<option value="<%= sdata[i].sid %>"><%= sdata[i].sname %></option>
 <% } %>
 </select>
 </td></tr>
 <tr><td>mechanic on basis of supervisor drop down select and save changeble multiple</td><td>
-//ajax for mech....
-<select name="mechanic" multiple>
-<% for(var i=0;i<sdata.length;i++) { %>
-<option><%= sdata[i].sname %></option>
-<% } %>
+<select id="mechanic" name="mechanic" multiple>
+	<!-- <option value="0">Select Mechanic</option> -->
 </select> 
 <%= data[0].mechanic %>   </td></tr>
 <tr><td>report comment box</td><td><textarea rows="4" cols="50" name="report">parag<%= data[0].report %></textarea></textarea></td></tr>
@@ -36,13 +35,42 @@
 <tr>
 <td>last status date null/date</td><td><input type="date" value="<%= data[0].st_date %>" name="st_date" readonly/><%= data[0].st_date %></td></tr>
 <tr><td>status drop down select and save changeble</td><td><select name="status" onchange="stdate()">
-<option>NEW</option>
-<option>ON PENDING</option>
-<option>UNDER PROGRESS</option>
+<option <% if(data[0].status == 'NEW'){%> <%= 'selected'  %> <% } %>>NEW</option>
+<option <% if(data[0].status == 'ON PENDING'){%> <%= 'selected'  %> <% } %>>ON PENDING</option>
+<option <% if(data[0].status == 'UNDER PROGRESS'){%> <%= 'selected'  %> <% } %>>UNDER PROGRESS</option>
 <option>RESOLVED</option>
 </select>     <%= data[0].status %></td><td><input type="submit" name="submit" value="save"></td></tr>				<input type="hidden" name="cexid"	value="<%= data[0].idcomplaint %>">	</form>	</table>				
 <span><%= status %></span>
 <script>
+function load(val){
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && (this.status == 200 || this.status == 304)) {
+	
+	var adata=new Array();
+	adata=JSON.parse(this.responseText);
+
+	
+	var select = document.getElementById('mechanic');
+	     for(var i = select.options.length - 1 ; i >= 0 ; i--) {
+         select.remove(i);
+}
+	
+	for(var i=0;i<adata.length;i++) { 
+		
+		    option = document.createElement('option');
+            option.value =adata[i].idmech ;
+            option.text = adata[i].mname ;
+            select.appendChild(option);
+		 }
+	
+
+    }
+  };
+  xhttp.open("GET", "mechanic?sup="+val,true);
+  xhttp.send();
+}
 function stdate(){
 	
 var today = new Date();

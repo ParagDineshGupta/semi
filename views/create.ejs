@@ -57,7 +57,7 @@ $('#cmd').click(function () {
 <table id="PreviewTable" border="1"><tr><td>Equipment Name</td><td>Serial Numbers</td><td>Total Equipment Name</td><td>Result</td></tr></table>
 <p>Total</p>
 </div>
- <embed src="uploads/interface.pdf" width="600" height="500" alt="pdf" style="float:right;" >
+ <embed src="uploads/<%= data[0].comment %>" width="600" height="500" alt="pdf" style="float:right;" >
 <INPUT type="button" class="but" value="Add " onclick="addRow('dataTable')" />
 <INPUT type="button" class="but" value="Delete " onclick="deleteRow('dataTable')" />
 <form method="post" id="amc">

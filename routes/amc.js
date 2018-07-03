@@ -39,8 +39,9 @@ var formatted = dt.format('Y-m-d');
 	con.query("insert into proposal_table set ?",mydata,function(err,result){
  		 if(err){console.log(err);
  		 	res.end('error');}
-         else{ res.write('amc');
-         res.end();	} 
+         else{
+         	res.redirect('http://localhost:1996/equipdetail?e='+req.body.ebid);
+         	} 
  	}); }
 
 	});

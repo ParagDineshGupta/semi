@@ -9,12 +9,12 @@ var con = mysql.createConnection(dbcon.con);
 router.get('/', function(req, res, next) {
 
      var of=0;
-      var sql2 = "select * from customer_info order by cid desc limit 1";
+      var sql2 = "select * from customer_info order by cid desc limit 10";
     con.query(sql2, function (err, result) {
         if (err) {console.log(sql2);
         res.render('err',{err:'ERROR'});}
         else {   
-        res.render('serchcust', { title: 'All Customer',data:result,p:'0',n:'1' });    
+        res.render('serchcust', { title: 'All Customer',data:result,p:'0',n:'10' });    
         }   });
 });
 
@@ -25,15 +25,16 @@ router.post('/', function(req, res, next) {
        if(submit=='Previous'){
         
         var of=req.body.row;
-        --of;
-            var sql2 = "select * from customer_info order by cid desc limit 1 OFFSET "+of;
+        // --of;
+        of=of-10;
+            var sql2 = "select * from customer_info order by cid desc limit 10 OFFSET "+of;
     con.query(sql2, function (err, result) {
         if (err) {console.log(sql2);
         res.render('err',{err:'ERROR'});}
         else {
              var len = Object.keys(result).length;
-              
-        res.render('serchcust', { title: 'All Customer',data:result,p:of,n:++of });    
+              var nof=(10-0)+(of-0);
+        res.render('serchcust', { title: 'All Customer',data:result,p:of,n:nof });    
         }
        
     });
@@ -42,7 +43,7 @@ router.post('/', function(req, res, next) {
       if(submit=='Next'){
 
         var of=req.body.row;
-            var sql2 = "select * from customer_info order by cid desc limit 1 OFFSET "+of;
+            var sql2 = "select * from customer_info order by cid desc limit 10 OFFSET "+of;
     con.query(sql2, function (err, result) {
         if (err) {console.log(sql2);
         res.render('err',{err:'ERROR'});}
@@ -52,8 +53,11 @@ router.post('/', function(req, res, next) {
              {
                res.render('serchcust', { title: 'All Customer',data:result,p:of,n:0 }); 
              }
-              else
-        res.render('serchcust', { title: 'All Customer',data:result,p:of,n:++of });    
+              else{
+                nof=(10-0)+(of-0);
+                res.render('serchcust', { title: 'All Customer',data:result,p:of,n:nof });    
+
+              }
         }
        
     });

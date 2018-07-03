@@ -50,9 +50,6 @@ float: right;
             padding: 0;
             overflow: hidden;
             background-color: #307ecc;
-
-
-
         }
 
         .mydropdown {
@@ -69,6 +66,7 @@ float: right;
 
         .mydropdown a:hover, .mydropdown:hover .mydropbtn {
             background-color: red;
+            color: white;
         }
 
         li.mydropdown {
@@ -109,24 +107,24 @@ float: right;
 <body>
 <div class="header">
 <ul class="headul">
-    <li class="mydropdown"><a href="/">Home</a></li>
+    <li class="mydropdown"><a href="/"><span class="htext">Home</span></a></li>
     <li class="mydropdown">
         <a href="/searchcust" class="mydropbtn"><span class="htext">Customer</span></a>
         <div class="mydropdown-content">
             <a href="searchcust">Search Customer</a>
             <a href="addcust">Add New Customer</a>
-            <a href="contact">Contacts</a>
+         
         </div>
     </li>
     <li class="mydropdown">
-        <a href="javascript:void(0)" class="mydropbtn">Equipment</a>
+        <a href="javascript:void(0)" class="mydropbtn"><span class="htext">Equipment</span></a>
         <div class="mydropdown-content">
-            <a href="searchequip">Search Equipment</a>
+            <a href="ourequips">Our Equipments</a>
             <a href="addequip">Add New Equipment</a>
         </div>
     </li>
     <li class="mydropdown">
-        <a href="javascript:void(0)" class="mydropbtn">Complain</a>
+        <a href="javascript:void(0)" class="mydropbtn"><span class="htext">Complain</span></a>
         <div class="mydropdown-content">
             <a href="searchcomp">Search complain</a>
             <a href="makecomp">Make New Complain</a>
@@ -134,7 +132,7 @@ float: right;
         </div>
     </li>
     <li class="mydropdown">
-        <a href="/service" class="mydropbtn">Service</a>
+        <a href="/service" class="mydropbtn"><span class="htext">Proposal</span></a>
         <div class="mydropdown-content">
             <a href="gensched">Generate schedule</a>
             <a href="livelist">Live list</a>
@@ -142,7 +140,7 @@ float: right;
         </div>
     </li>
     <li class="mydropdown">
-        <a href="/amc" class="mydropbtn">AMC</a>
+        <a href="/amc" class="mydropbtn"><span class="htext">AMC</span></a>
         <div class="mydropdown-content">
             <a href="renew">Renew</a>
             <a href="explist">Expiry List</a>
@@ -150,10 +148,19 @@ float: right;
         </div>
     </li>
     <li class="mydropdown">
-        <a href="/pay" class="mydropbtn">Paymant</a>
+        <a href="/pay" class="mydropbtn"><span class="htext">Paymant</span></a>
         <div class="mydropdown-content">
             <a href="adddetails">Add Details</a>
             <a href="searchdetails">Search Details</a>
+
+        </div>
+    </li>
+      <li class="mydropdown">
+        <a href="" class="mydropbtn"><span class="htext">Location</span></a>
+        <div class="mydropdown-content">
+            <a href="">Our Locations</a>
+            <a href="">Add New Location</a>
+            <a href="">Add New Zone</a>
 
         </div>
     </li>

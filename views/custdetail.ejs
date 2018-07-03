@@ -1,7 +1,7 @@
 <% include header %>
 <div class="rdiv">
-<ul><li>
-<a onclick="viewform()" id="anl">Add New Location</a>
+<ul><li onclick="viewform()" id="anl">
+<a >Add New Location</a>
 </li>
 
 <li>
@@ -64,7 +64,7 @@ Basic customer Details:<%= data[0].cid %><br>
 All loc:
 <table border="1">
 <tr>
-<td>S.No.</td><td>Zone</td><td>Location</td><td>Place</td><td>Contact Person</td><td>Contact Number</td><td>DELETE LOCATION</td><td>UPDATE LOCATION</td></tr>
+<td>S.No.</td><td>Zone</td><td>Location</td><td>Place</td><td>Contact Person</td><td>Contact Number</td><!-- <td>DELETE LOCATION</td><td>UPDATE LOCATION</td> --></tr>
 <% for(var i=0;i<data2.length;i++) { %>
 <tr>
 <td><a href="locdetail?l=<%= data2[i].lid %>"> <%= i+1 %> </a> </td>
@@ -73,12 +73,12 @@ All loc:
 <td><%= data2[i].place %> </td>
 <td><%= data2[i].contact_person %> </td>
 <td><%= data2[i].contact_number %> </td>
-<td><form method="post">
+<!-- <td><form method="post">
 <input type="submit" name="submit" value="Delete Location" onclick="return confirm('Are You Sure to Delete')">
-<input type="hidden" name="d" value="<%= data2[i].lid  %>"> 
-<input type="hidden" name="c" value="<%= data2[i].cid  %>"> 
+<input type="hidden" name="d" value="<% data2[i].lid  %>"> 
+<input type="hidden" name="c" value="<% data2[i].cid  %>"> 
 </form> </td>
-
+ -->
 </tr>
 <% } %>	
 </table>

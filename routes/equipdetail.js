@@ -17,17 +17,31 @@ var formatted = dt.format('Y-m-d H:M:S');
 
 router.get('/', function(req, res, next) {
 var ebid = req.query.e;
-var sql="select * from equipment_table where ebid='"+ebid+"'";
+var sql="select * from equipment_table where ebid ='"+ebid+"';select * from serial_number_table where ebid= "+ebid;
 con.query(sql, function(err,result){
-         if(err){res.end('error');}
-        else{  var len = Object.keys(result).length;
+         if(err){res.end(sql);}
+        else{  var len = Object.keys(result[0]).length;
         if(len==1) 
         {    //complaint_table
-            res.render('equipdetail', { title:'equip',data:result});
+            var sql2="select * from location_table where lid= "+result[0][0].lid;
+            con.query(sql2, function(err,result2){
+                if(err){res.end(sql2);}
+                else{
+                    var sql3="select * from customer_info where cid= "+result2[0].cid;
+                      con.query(sql3, function(err,result3){
+                if(err){res.end('error3');}
+                else{
+                   res.render('equipdetail', { title:'equip',data:result[0],data2:result[1],data3:result2,data4:result3});
+                }
+            });
+
+                }
+            });
+            
 
         }
         else
-            res.end('error');     } 
+            res.end('error1');     } 
     }); 
 
 });
@@ -103,6 +117,14 @@ data.doc=formatted;
    if(err) {
     console.log(err);
     throw err;}
+    else{
+      var sql2="update equipment_table set csv=1 where ebid = "+ebid;
+      con.query(sql2,function(err){
+   if(err) {
+    console.log(err);
+    throw err;}});
+
+    }
    });}}
 }
 
@@ -122,7 +144,8 @@ file.mv(file.name, function(err){
             });
          
         stream.pipe(csvStream);
-        res.send("Back.....................");
+        // res.send("Back.....................");
+        res.redirect('http://localhost:1996/equipdetail?e='+ebid);
       }
   
 

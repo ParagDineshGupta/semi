@@ -129,6 +129,7 @@ console.log(mydata);
 else
 {
 	var sql="update proposal_table set state = '"+mydata.state+"' where idproposal_table = "+mydata.pid;
+	console.log("parag"+sql);
 	con.query(sql, function(err,result){
 		 if(err){res.end('error');}
         else{ 

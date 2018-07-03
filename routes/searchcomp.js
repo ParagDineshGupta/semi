@@ -125,10 +125,17 @@ router.post('/', function(req, res, next) {
 
          delete data.submit;
          delete data.cexid;
+         console.log(typeof(data.nature));
+         data.nature=data.nature.toString(); 
+        data.mechanic=data.mechanic.toString(); 
+          console.log(data.nature);
+         // data.nature.join(' and ');
+         // if(typeof(data.nature)=='array'){data.nature=}
         con.query("UPDATE complaint_extension SET ? where idcomplaint='"+cexid+"' ",data, function (err, result) {
             if (err) {console.log(err); }
             else {
-                res.send("data saved");
+                // res.send("data saved");
+                res.redirect('http://localhost:1996/searchcomp');
             }
           
          });

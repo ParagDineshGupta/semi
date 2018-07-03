@@ -1,0 +1,20 @@
+<% include header %>
+<%= data.length %>
+<table border="1">
+<% for(var i=0;i<data.length;i++) { %>
+
+<tr>
+<td><%= i-0+1 %></td>
+<td><a href=""><%= data[i].amcid %></a></td>
+<td><%= data[i].payment_status %> </td>
+<td><%= data[i].payment_status_date %> </td>
+<td><%= data[i].total_payment %> </td>
+<td><%= data[i].deposit_payment %> </td>
+<td><%= data[i].overdue_payment %> </td>
+<td><form method="post">
+<input type="hidden" value="<%= data[i].amcid %>" name="amcid">
+<input type="submit" value="add Payment" name="submit">
+</form>
+</td>
+
+<% } %></table>

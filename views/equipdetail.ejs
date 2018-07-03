@@ -5,9 +5,11 @@
 <li>
 <a onclick="viewform()" id="esc">Equipment Complaint</a>
 </li>
+<% if(data[0].csv=='0'){ %>
 <li>
 <a onclick="csvform()" id="csv">upload csv</a>
 </li>
+<% } %>
 <li>
 <a href="/amc?e=<%= data[0].ebid %>">Genertate Proposal</a>
 </li>
@@ -23,6 +25,11 @@
 </ul>
 </div>
 Basic Equipment Details:<%= data[0].ebid %><br>
+ALL Equipment Serial Numbers
+<% for(var i=0;i<data2.length;i++) { %>
+<td><%= data2[i].serial_number %> </td>
+<% } %>	
+
 <form  method="post" enctype="multipart/form-data"  id="csvform" style="display:none" >
  <input type="file" name="myfile" accept=".csv" required >
  <input type="hidden" name="bid" value="<%= data[0].ebid %>" >
@@ -80,19 +87,234 @@ Problem:
     </center>
 
 </form>
+<div id="dvContainer" style="background:white;float:right;height:400px;width:50%;color:black">
+<p>Proposal:<%= data4[0].cid %><%= data3[0].lid %><%= data[0].ebid %></p> <p>DATE:</p>  <p>Company Name: <%= data4[0].CUST_NAME %></p>  <p>  Location Name: <%= data3[0].zone %>-<%= data3[0].location %>-<%= data3[0].place %></p>  <p>  ALL Equipment list in AMC:</p>
+<table id="PreviewTable" border="1"><tr><td>Equipment Name</td><td>Serial Numbers</td><td>Total Equipment Name</td><td>Result</td></tr></table>
+<p>Total</p>
+</div>
+
+
+
+
+<INPUT type="button" class="but" value="Add " onclick="addRow('dataTable')" />
+<INPUT type="button" class="but" value="Delete " onclick="deleteRow('dataTable')" />
+<TABLE id="dataTable" border="1">	
+
+	</TABLE>
+
+<input type="button"  value="preview" onclick="preview();" >
+<input type="button" value="Print" id="btnPrint" />
+<div id="editor"></div>
+<button id="cmd">generate PDF</button>
+
+<form method="post" action="/amc"  enctype="multipart/form-data" >
+<input type="file" name="mypdf" accept="application/pdf" />
+<input type="hidden" name="locid" value="0"  />
+<input type="hidden" name="ebid" value="<%= data[0].ebid %>"  />
+<input type="submit" value="Save pdf on server" id="" />
+</form>
+<a class="email" title="Email Proposal" href="#" onclick="javascript:window.location='mailto:x<%= data3[0].contact_person %>?subject=Proposal For AMC&body=We think you might find this information interesting:<%= data4[0].cid %><%= data3[0].lid %><%= data[0].ebid %>.pdf ' + window.location;">Email</a>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#btnPrint").live("click", function () {
+            var divContents = $("#dvContainer").html();
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write('<html><head><title>Proposal ID:<%= data4[0].cid %><%= data3[0].lid %><%= data[0].ebid %></title>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        });
+    </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
 <script>
 
 
 function viewform(){
 document.getElementById('viewform').style.display="inline";
-document.getElementById('esc').style.backgroundColor="blue";
+document.getElementById('esc').style.backgroundColor="yellow";
 document.getElementById('esc').disabled="true";
 }
 function csvform(){
 document.getElementById('csvform').style.display="inline";
-document.getElementById('csv').style.backgroundColor="blue";
+document.getElementById('csv').style.backgroundColor="yellow";
 document.getElementById('csv').disabled="true";
 }
 
 </script>
+<script>
+        var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+
+$('#cmd').click(function () {
+    doc.fromHTML($('#dvContainer').html(), 15, 15, {
+        'width': 170,
+            'elementHandlers': specialElementHandlers
+    });
+    doc.save(<%= data4[0].cid %><%= data3[0].lid %><%= data[0].ebid %>);
+});</script>
+
+
+<script>
+
+function preview(){
+
+			var table = document.getElementById('dataTable');
+			var rowCount = table.rows.length;
+			var ptable = document.getElementById('PreviewTable');
+			for(var i=0;i<rowCount;i++){
+			var row = ptable.insertRow(i-0+1);
+            var cell0 = row.insertCell(0);
+			cell0.innerHTML='element name';
+
+			var cell1 = row.insertCell(1);
+			cell1.innerHTML=myFunction(i);
+
+			var cell2 = row.insertCell(2);
+		    var th=table.rows[i].cells[2].children[0].value;
+		    cell2.innerHTML=th;
+
+			}
+
+
+			
+		    
+
+		alert(table.rows[0].cells[1].options[0]);	
+        
+
+
+}
+
+function myFunction(x) {
+var str="";
+for(var i=0;i<document.getElementById("dataTable").rows[x].cells[1].children[0].options.length;i++)
+  if(document.getElementById("dataTable").rows[x].cells[1].children[0].options[i].selected)
+  if(i!=0)
+  {str=str+","+document.getElementById("dataTable").rows[x].cells[1].children[0].options[i].value;}
+  else
+  {str=document.getElementById("dataTable").rows[x].cells[1].children[0].options[i].value;}
+ 
+  return str;
+}
+
+
+function total(th) {	
+	var options = th.options, count = 0;
+for (var i=0; i < options.length; i++) {
+  if (options[i].selected) count++;
+}
+document.getElementById("t"+th.id).value=count;
+}
+
+
+function addRow(tableID) {
+
+			var table = document.getElementById(tableID);
+
+			var rowCount = table.rows.length;
+			var row = table.insertRow(rowCount);
+
+			var cell1 = row.insertCell(0);
+			var element1 = document.createElement("input");
+			element1.type = "checkbox";
+			element1.name="chkbox";
+			element1.id =(rowCount-0+1);
+			element1.className="ro";
+			cell1.appendChild(element1);
+
+		    var cell2 = row.insertCell(1);	
+			var select = document.createElement('select');
+			select.name = "equip";
+			select.id = "e"+(rowCount-0+1);
+			select.multiple = "True";
+			select.addEventListener("click", function(){
+    total(this);
+});
+			
+			select.className="ro";
+			<% for(var i=0;i<data2.length;i++) { %>
+		
+			option = document.createElement('option');
+            option.value ='<%= data2[i].serial_number %>' ;
+            option.text = '<%= data2[i].serial_number %>' ;
+            select.appendChild(option);
+			<% } %>
+            cell2.appendChild(select);
+
+			var cell4 = row.insertCell(2);
+			var element4 = document.createElement("input");
+			element4.type = "number";
+			element4.placeholder = "Total";
+			element4.name = "total";
+			element4.id = "te"+(rowCount-0+1);
+			element4.readOnly = "True";
+			element4.className="ro";
+			cell4.appendChild(element4);
+
+			 var cell3 = row.insertCell(3);	
+			var select = document.createElement('select');
+			select.name = "period";
+			select.id = "tep"+(rowCount-0+1);
+			select.className="ro";
+			option = document.createElement('option');
+            option.value ='weekly' ;
+            option.text = 'weekly' ;
+            select.appendChild(option);
+            option = document.createElement('option');
+            option.value ='monthly' ;
+            option.text = 'monthly' ;
+            select.appendChild(option);
+            cell3.appendChild(select);
+            option = document.createElement('option');
+            option.value ='quaterly' ;
+            option.text = 'quaterly' ;
+            select.appendChild(option);
+            option = document.createElement('option');
+            option.value ='yearly' ;
+            option.text = 'yearly' ;
+            select.appendChild(option);
+
+
+		
+			var cell4 = row.insertCell(4);
+			var element4 = document.createElement("input");
+			element4.type = "number";
+			element4.placeholder = "Rate per Equipment";
+			element4.required = "True";
+			element4.name = "rpe";
+			element4.id = "tepr"+(rowCount-0+1);
+			element4.className="ro";
+			cell4.appendChild(element4);
+		}
+
+		function deleteRow(tableID) {
+			try {
+			var table = document.getElementById(tableID);
+			var rowCount = table.rows.length;
+
+			for(var i=0; i<rowCount; i++) {
+				var row = table.rows[i];
+				var chkbox = row.cells[0].childNodes[0];
+				if(null != chkbox && true == chkbox.checked) {
+					table.deleteRow(i);
+					rowCount--;
+					i--;
+				}
+
+
+			}
+			}catch(e) {
+				alert(e);
+			}
+		}
+
+	</SCRIPT>
